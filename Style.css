@@ -1,15 +1,16 @@
-*{
+* {
     box-sizing: border-box;
 }
 
-body, html{
+body,
+html {
     padding: 0;
     margin: 0;
     overflow-x: hidden;
 
 }
 
-header{
+header {
     margin: 1rem;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -17,15 +18,15 @@ header{
 }
 
 
-header svg{
-grid-column: 12/-1;
- justify-items: end;
+header svg {
+    grid-column: 12/-1;
+    justify-items: end;
     width: 35px;
     margin: 10px;
 }
 
-header .logo{
-     grid-column: 1/1;
+header .logo {
+    grid-column: 1/1;
     background-image: url(LogoImage/KopenhagenArt_logo-01.svg);
     background-repeat: no-repeat;
     width: 300px;
@@ -45,11 +46,12 @@ header nav a {
     transition: color 0.2s 0.1s;
 
 }
-header nav a:hover{
+
+header nav a:hover {
     color: gray;
 }
 
-header nav .active{
+header nav .active {
     font-weight: bold;
 }
 
@@ -65,23 +67,24 @@ header nav {
     transition: transform 1s;
 }
 
-header nav.open{
+header nav.open {
     transform: translateX(-100vw);
 }
+
 /********** Burger *********/
 
-svg rect{
+svg rect {
     transition: all 0.2s;
-     transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
 }
 
 .open rect:nth-child(2),
-.open rect:nth-child(3){
+.open rect:nth-child(3) {
     transition-delay: 0.2s;
 }
 
 header rect:nth-child(2),
-rect:nth-child(3){
+rect:nth-child(3) {
     transition-delay: 0s;
 }
 
@@ -91,13 +94,14 @@ rect:nth-child(3){
     opacity: 0;
 }
 
-.open rect:nth-child(2){
+.open rect:nth-child(2) {
     transform: rotate(45deg);
 }
 
-.open rect:nth-child(3){
+.open rect:nth-child(3) {
     transform: rotate(-45deg);
 }
+
 .open rect:last-child {
     transform: translateY(-30px);
     opacity: 0;
@@ -106,25 +110,27 @@ rect:nth-child(3){
 
 /************ search ************/
 
-.search-box{
+.search-box {
     position: absolute;
     left: 245px;
     padding: 5px;
     margin: 7px;
-    transform: translate(-50%, -50%)
-    height: 25px;
+    transform: translate(-50%, -50%) height: 25px;
     border-radius: 25px;
-     background: darkgray;
+    background: darkgray;
 }
-.search-box:hover > .search-txt{
+
+.search-box:hover > .search-txt {
     width: 140px;
     padding: 0 6px;
 }
-.search-box:hover > .search-btn{
-   background: black;
+
+.search-box:hover > .search-btn {
+    background: black;
 }
-.search-btn{
-    color:white;
+
+.search-btn {
+    color: white;
     float: right;
     width: 25px;
     height: 25px;
@@ -136,13 +142,13 @@ rect:nth-child(3){
 
 }
 
-.search-txt{
-    border:none;
+.search-txt {
+    border: none;
     background: none;
     outline: none;
     float: left;
     padding: 0;
-    color:white;
+    color: white;
     font-size: 10px;
     line-height: 20px;
     width: 0px;
