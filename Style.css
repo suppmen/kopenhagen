@@ -304,3 +304,13 @@ button {
     top: 5%;
 }
 
+.footer-distributed{display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+ grid-template-areas: "footer-left" "footer-center" "footer-right"  ;
+    grid-gap: 8px;}
+
+footer-center h2 {justify-content: center;}
+
+.footer-icons{float: left;}
+
+.footer-icons img {width:10%;}
