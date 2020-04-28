@@ -194,45 +194,13 @@ svg rect {
 header rect:nth-child(2),
 rect:nth-child(3) {
     transition-delay: 0s;
-
 }
 
-.borderP {
-    width: 70%;
-    height: auto;
-    margin-left: 15%;
 
-    position: relative;
-    display: grid;
-    top: -100px;
+.open rect:first-child {
+    transform: translateY(30px);
+    opacity: 0;
 }
-
-button {
-    background-color: #ADE5DF;
-    border-radius: 3rem;
-    color: white;
-    padding: 20px 20px;
-    text-decoration: none;
-    font-size: 30px;
-    border-style: none;
-    margin: 5px 5px;
-    opacity: 0.8;
-    position: absolute;
-    display: grid;
-    top: 40%;
-    left: 57%;
-
-}
-
-.coverimg {
-    width: 120%;
-    height: auto;
-    position: absolute;
-    display: grid;
-    left: 27%;
-    top: 5%;
-}
-
 
 .open rect:nth-child(2) {
     transform: rotate(45deg);
@@ -246,6 +214,8 @@ button {
     transform: translateY(-30px);
     opacity: 0;
 }
+
+
 
 
 /************ search ************/
@@ -294,5 +264,43 @@ button {
     width: 0px;
     transition: 0.4s;
 
+}
+
+
+/********** cover Image ************/
+.borderP {
+    width: 70%;
+    height: auto;
+    margin-left: 15%;
+
+    position: relative;
+    display: grid;
+    top: -100px;
+}
+
+button {
+    background-color: #ADE5DF;
+    border-radius: 3rem;
+    color: white;
+    padding: 20px 20px;
+    text-decoration: none;
+    font-size: 30px;
+    border-style: none;
+    margin: 5px 5px;
+    opacity: 0.8;
+    position: absolute;
+    display: grid;
+    top: 40%;
+    left: 57%;
+
+}
+
+.coverimg {
+    width: 120%;
+    height: auto;
+    position: absolute;
+    display: grid;
+    left: 27%;
+    top: 5%;
 }
 
