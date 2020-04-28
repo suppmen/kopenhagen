@@ -250,6 +250,11 @@ rect:nth-child(3) {
 }
 
 
+
+
+
+/********** cover Image and text in header ************/
+
 header  .mainheader{
         /* padding: 0 100px; */
 
@@ -293,8 +298,6 @@ margin-left: 50px;
     grid-row-end: 8;
     }
 
-
-/********** cover Image ************/
 .borderP {
     width: 80%;
     height: auto;
