@@ -3,12 +3,19 @@ body {
     font-family: Josefin sans;
     margin: 0;
 }
+header{
+     margin: 1rem;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 100px auto ;
+}
 
-header section {
-
+header section .mainheader{
+margin-top: 200px;
     margin-left: 10%;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-row-start: 2/-1;
 }
 
 
@@ -86,26 +93,16 @@ main .bottom-box > h2{
     z-index: 10
 }
 
-html {
-    padding: 0;
-    margin: 0;
-    overflow-x: hidden;
 
-}
 
-header {
-    margin: 1rem;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
 
-}
 
 
 header svg {
     grid-column: 12/-1;
-    justify-items: end;
     width: 35px;
     margin: 10px;
+    z-index: 120;
 }
 
 header .logo {
@@ -139,9 +136,8 @@ header nav .active {
     font-weight: bold;
 }
 
-.mainheader {
-    display: grid;
-}
+
+
 
 h1 {
     font-size: 50px;
@@ -159,19 +155,24 @@ h1 {
     border-top: 10px solid;
     border-bottom: 10px solid;
     position: relative;
-    display: grid;
+
     color: #D1A343;
     }
 
 header nav {
     position: absolute;
     right: -100vw;
-    top: 100px;
+/*    top: 100px;*/
     z-index: 100;
     background: white;
     width: 100vw;
-    height: calc(100vh - 100px);
+/*    height: calc(100vh - 30px);*/
+    height: 100vh;
     padding: 4rem;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
     transition: transform 1s;
 }
 
@@ -274,7 +275,6 @@ rect:nth-child(3) {
     margin-left: 15%;
 
     position: relative;
-    display: grid;
     top: -100px;
 }
 
@@ -289,18 +289,16 @@ button {
     margin: 5px 5px;
     opacity: 0.8;
     position: absolute;
-    display: grid;
+
     top: 40%;
     left: 57%;
 
 }
 
 .coverimg {
-    width: 120%;
     height: auto;
     position: absolute;
-    display: grid;
+
     left: 27%;
-    top: 5%;
 }
 
