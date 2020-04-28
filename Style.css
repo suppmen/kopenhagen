@@ -81,11 +81,13 @@ border-top: none;
     margin-top: -200px;
     margin-bottom: 100px;
     z-index: 1;
+    position: relative;
 }
-main .bottom-box h2{
+main .bottom-box > h2{
  position: absolute;
     bottom: -20px;
     right: 270px;
+    z-index: 10
 }
 
 html {
