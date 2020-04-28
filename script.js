@@ -1,11 +1,10 @@
+/*********** toggeling the burger and nav ************/
 
 window.addEventListener("load", setup);
 
 function setup() {
     setupBurgherNav();
-
 }
-
 
 function setupBurgherNav() {
     const burger = document.querySelector("header svg");
@@ -15,10 +14,12 @@ function setupBurgherNav() {
         nav.classList.toggle("open");
     });
 }
+/*******************************************************/
 
 
 
-/***** Get Data from WP *****/
+
+/*********************** Get Data from WP **************************/
 
 const link0 = "http://mymmd.dk/Kopenhagen/wp-json/wp/v2/art_calendar?per_page=100";
 const link1 = "http://mymmd.dk/Kopenhagen/wp-json/wp/v2/art_calendar?per_page=100&_embed";
@@ -60,8 +61,8 @@ function showData(artArray){
 
     });
 
-
 }
 
+/*********************************************************************************************************/
 
 
