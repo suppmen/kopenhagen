@@ -1,12 +1,11 @@
 
-@font-face {
-    font-family: josefinsans;
-    src: url(josefinsans.giff);
+body {
+    font-family: Josefin sans;
+    margin: 0;
 }
 
-
 header section {
-    font-family: arial black, sans-serif;
+
     margin-left: 10%;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -18,10 +17,7 @@ header section {
 }
 
 
-body {
-    font-family: Josefin sans;
-    margin: 0;
-}
+
 main{
     display: flex;
     flex-direction: column;
@@ -205,7 +201,7 @@ rect:nth-child(3) {
     width: 70%;
     height: auto;
     margin-left: 15%;
-    font-family: josefinsans;
+
     position: relative;
     display: grid;
     top: -100px;
@@ -218,7 +214,7 @@ button {
     padding: 20px 20px;
     text-decoration: none;
     font-size: 30px;
-    font-family: josefinsans;
+    border-style: none;
     margin: 5px 5px;
     opacity: 0.8;
     position: absolute;
