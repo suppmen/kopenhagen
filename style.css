@@ -38,7 +38,7 @@ main .events-list-title{
     color: #878081;
 
 }
-main > #cards-wrapper {
+main > .cards-wrapper {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 
@@ -49,27 +49,27 @@ main > #cards-wrapper {
     z-index: 10;
 }
 
-main > #cards-wrapper .calendar-card {
+main > .cards-wrapper .calendar-card {
     background: #e7f1f3;
     /*    height: 300px;*/
     padding: 10px;
 }
 
-main > #cards-wrapper .calendar-card .card-details {
+main > .cards-wrapper .calendar-card .card-details {
     padding: 5px;
 }
 
-main > #cards-wrapper .calendar-card .card-details p {
+main > .cards-wrapper .calendar-card .card-details p {
     font-size: 0.8rem;
     text-transform: capitalize;
 }
 
-main > #cards-wrapper .calendar-card .card-header img {
+main > .cards-wrapper .calendar-card .card-header img {
     max-width: 100%;
     height: auto;
 }
 
-main > #cards-wrapper .calendar-card .arrow-button img {
+main > .cards-wrapper .calendar-card .arrow-button img {
     max-width: 60%;
     height: auto;
     margin-top: 20px;
