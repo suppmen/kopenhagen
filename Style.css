@@ -2,6 +2,7 @@
     box-sizing: border-box;
 }
 
+
 body {
     font-family: Josefin sans;
     margin: 0;
@@ -70,4 +71,157 @@ main .bottom-box h2{
  position: absolute;
     bottom: -20px;
     right: 270px;
+}
+html {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+
+}
+
+header {
+    margin: 1rem;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+
+}
+
+
+header svg {
+    grid-column: 12/-1;
+    justify-items: end;
+    width: 35px;
+    margin: 10px;
+}
+
+header .logo {
+    grid-column: 1/1;
+    background-image: url(LogoImage/KopenhagenArt_logo-01.svg);
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 50px;
+    margin: 0px;
+}
+
+/********Navigation ********/
+header nav a {
+    font-size: 2rem;
+    display: block;
+    text-decoration: none;
+    color: black;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 3rem;
+    transition: color 0.2s 0.1s;
+    z-index: 100;
+
+}
+
+header nav a:hover {
+    color: gray;
+}
+
+header nav .active {
+    font-weight: bold;
+}
+
+header nav {
+    position: absolute;
+    right: -100vw;
+    top: 100px;
+    z-index: 100;
+    background: white;
+    width: 100vw;
+    height: calc(100vh - 100px);
+    padding: 4rem;
+    transition: transform 1s;
+}
+
+header nav.open {
+    transform: translateX(-100vw);
+}
+
+/********** Burger *********/
+
+svg rect {
+    transition: all 0.2s;
+    transform-origin: 50% 50%;
+}
+
+.open rect:nth-child(2),
+.open rect:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+header rect:nth-child(2),
+rect:nth-child(3) {
+    transition-delay: 0s;
+}
+
+
+.open rect:first-child {
+    transform: translateY(30px);
+    opacity: 0;
+}
+
+.open rect:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+.open rect:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+.open rect:last-child {
+    transform: translateY(-30px);
+    opacity: 0;
+}
+
+
+/************ search ************/
+
+.search-box {
+    position: absolute;
+    left: 245px;
+    padding: 5px;
+    margin: 7px;
+    transform: translate(-50%, -50%) height: 25px;
+    border-radius: 25px;
+    background: darkgray;
+}
+
+.search-box:hover > .search-txt {
+    width: 140px;
+    padding: 0 6px;
+}
+
+.search-box:hover > .search-btn {
+    background: black;
+}
+
+.search-btn {
+    color: white;
+    float: right;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.search-txt {
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: white;
+    font-size: 10px;
+    line-height: 20px;
+    width: 0px;
+    transition: 0.4s;
+
 }
