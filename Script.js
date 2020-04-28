@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 window.addEventListener("load", setup);
 
 function setup() {
@@ -16,4 +15,4 @@ function setupBurgherNav() {
         nav.classList.toggle("open");
     });
 }
->>>>>>> origin/master
+

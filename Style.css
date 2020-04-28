@@ -1,23 +1,93 @@
-<<<<<<< HEAD
+
 @font-face {
     font-family: josefinsans;
     src: url(josefinsans.giff);
 }
 
 
-header {
+header section {
     font-family: arial black, sans-serif;
     margin-left: 10%;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
 
 
-=======
 * {
     box-sizing: border-box;
 }
 
-body,
+
+body {
+    font-family: Josefin sans;
+    margin: 0;
+}
+main{
+    display: flex;
+    flex-direction: column;
+}
+main .events-list-title{
+    display: flex;
+        padding-left: 100px;
+    width: 40%;
+    align-items: baseline;
+    justify-content: space-between;
+    color: #878081;
+
+}
+main > #cards-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+
+    grid-gap: 4rem;
+    padding: 100px;
+    padding-top: 0;
+    position: relative;
+    z-index: 10;
+}
+
+main > #cards-wrapper .calendar-card {
+    background: #e7f1f3;
+    /*    height: 300px;*/
+    padding: 10px;
+}
+
+main > #cards-wrapper .calendar-card .card-details {
+    padding: 5px;
+}
+
+main > #cards-wrapper .calendar-card .card-details p {
+    font-size: 0.8rem;
+    text-transform: capitalize;
+}
+
+main > #cards-wrapper .calendar-card .card-header img {
+    max-width: 100%;
+    height: auto;
+}
+
+main > #cards-wrapper .calendar-card .arrow-button img {
+    max-width: 60%;
+    height: auto;
+    margin-top: 20px;
+}
+main .bottom-box{
+   border: 5px #d1a343 solid;
+border-top: none;
+    width: 90%;
+    height: 200px;
+    justify-content: center;
+    align-self: center;
+    margin-top: -200px;
+    margin-bottom: 100px;
+    z-index: 1;
+}
+main .bottom-box h2{
+ position: absolute;
+    bottom: -20px;
+    right: 270px;
+}
+
 html {
     padding: 0;
     margin: 0;
@@ -59,6 +129,7 @@ header nav a {
     margin-bottom: 1rem;
     margin-left: 3rem;
     transition: color 0.2s 0.1s;
+    z-index: 100;
 
 }
 
@@ -68,13 +139,10 @@ header nav a:hover {
 
 header nav .active {
     font-weight: bold;
->>>>>>> origin/master
 }
 
 .mainheader {
     display: grid;
-
-<<<<<<< HEAD
 }
 
 h1 {
@@ -95,7 +163,20 @@ h1 {
     position: relative;
     display: grid;
     color: #D1A343;
-=======
+    }
+
+header nav {
+    position: absolute;
+    right: -100vw;
+    top: 100px;
+    z-index: 100;
+    background: white;
+    width: 100vw;
+    height: calc(100vh - 100px);
+    padding: 4rem;
+    transition: transform 1s;
+}
+
 header nav.open {
     transform: translateX(-100vw);
 }
@@ -115,7 +196,7 @@ svg rect {
 header rect:nth-child(2),
 rect:nth-child(3) {
     transition-delay: 0s;
->>>>>>> origin/master
+
 }
 
 .borderP {
@@ -128,7 +209,6 @@ rect:nth-child(3) {
     top: -100px;
 }
 
-<<<<<<< HEAD
 button {
     background-color: #ADE5DF;
     border-radius: 3rem;
@@ -155,7 +235,7 @@ button {
     top: 5%;
 }
 
-=======
+
 .open rect:nth-child(2) {
     transform: rotate(45deg);
 }
@@ -215,5 +295,6 @@ button {
     line-height: 20px;
     width: 0px;
     transition: 0.4s;
+
 }
->>>>>>> origin/master
+
