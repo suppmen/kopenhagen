@@ -304,6 +304,8 @@ button {
     top: 5%;
 }
 
+/************ footer ************/
+
 .footer-distributed{display: grid;
 grid-template-columns: 1fr 1fr 1fr;
  grid-template-areas: "footer-left" "footer-center" "footer-right"  ;
