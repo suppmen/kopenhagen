@@ -1,3 +1,5 @@
+
+/*
 header {
     grid-area: header;
 }
@@ -9,7 +11,7 @@ main {
 footer {
     grid-area: footer;
 }
-
+*/
 * {
     box-sizing: border-box;
 }
@@ -19,81 +21,22 @@ body {
     margin: 0;
     overflow-x: hidden;
 
-    display: grid;
+  /* display: grid;
     grid-template-columns: 5% 1fr 1fr 1fr 1fr 5%;
     grid-template-rows: auto;
     grid-template-areas:
         ". header header header header ."
         ". main main main main ."
-        ". footer footer footer footer .";
+        ". footer footer footer footer ."; */
 
 }
 
-header {
-    margin: 1rem;
+header{
+     margin: 1rem;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 100px auto;
+    grid-template-rows: 100px auto ;
 }
-
-main > .cards-wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-
-    grid-gap: 4rem;
-    padding: 100px;
-    padding-top: 0;
-    position: relative;
-    z-index: 10;
-}
-
-main > .cards-wrapper .calendar-card {
-    background: #e7f1f3;
-    /*    height: 300px;*/
-    padding: 10px;
-}
-
-main > .cards-wrapper .calendar-card .card-details {
-    padding: 5px;
-}
-
-main > .cards-wrapper .calendar-card .card-details p {
-    font-size: 0.8rem;
-    text-transform: capitalize;
-}
-
-main > .cards-wrapper .calendar-card .card-header img {
-    max-width: 100%;
-    height: auto;
-}
-
-main > .cards-wrapper .calendar-card .arrow-button img {
-    max-width: 60%;
-    height: auto;
-    margin-top: 20px;
-}
-
-main .bottom-box {
-    border: 5px #d1a343 solid;
-    border-top: none;
-    width: 90%;
-    height: 200px;
-    justify-content: center;
-    align-self: center;
-    margin-top: -200px;
-    margin-bottom: 100px;
-    z-index: 1;
-    position: relative;
-}
-
-main .bottom-box > h2 {
-    position: absolute;
-    bottom: -20px;
-    right: 270px;
-    z-index: 10
-}
-
-
 
 header svg {
     grid-column: 12/-1;
@@ -110,8 +53,7 @@ header .logo {
     height: 220px;
     margin: 0px;
 }
-
-header > .logo-wrapper {
+header> .logo-wrapper{
     grid-column-start: 1;
     grid-column-end: 3;
 
@@ -120,6 +62,7 @@ header > .logo-wrapper {
 /********Navigation ********/
 header nav a {
     font-size: 2rem;
+    text-transform: uppercase;
     display: block;
     text-decoration: none;
     color: black;
@@ -141,23 +84,6 @@ header nav .active {
 
 
 
-h1 {
-    font-size: 50px;
-    width: 50%;
-    height: auto;
-    position: relative;
-    display: grid;
-}
-
-.border {
-    width: 100%;
-    height: 100px;
-    border-left: 10px solid;
-    border-top: 10px solid;
-    border-bottom: 10px solid;
-    position: relative;
-    color: #D1A343;
-}
 
 header nav {
     position: absolute;
@@ -217,7 +143,7 @@ rect:nth-child(3) {
 
 
 
-/************ search ************/
+/************ search bar ************/
 
 .search-box {
     position: absolute;
@@ -272,11 +198,11 @@ rect:nth-child(3) {
 
 /********** cover Image and text in header ************/
 
-header .mainheader {
-    /* padding: 0 100px; */
+header  .mainheader{
+        /* padding: 0 100px; */
 
     grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(10, 10vh);
+    grid-template-rows:  repeat(10, 10vh) ;
     grid-row-start: 2;
     display: grid;
     grid-column-start: 1;
@@ -285,14 +211,14 @@ header .mainheader {
 
 
 
-header > .mainheader h1 {
+header> .mainheader h1 {
     font-size: 3.5rem;
     width: 60%;
     height: auto;
-    margin-left: 50px;
+margin-left: 50px;
     font-family: Arial, Helvetica, sans-serif;
     position: relative;
-    grid-column-start: 2;
+      grid-column-start: 2;
     grid-column-end: 7;
     grid-row-start: 1;
 
@@ -307,13 +233,13 @@ header > .mainheader h1 {
     position: relative;
 
     color: #D1A343;
-    margin-left: 50px;
+margin-left: 50px;
 
-    grid-column-start: 2;
+      grid-column-start: 2;
     grid-column-end: 5;
     grid-row-start: 4;
     grid-row-end: 8;
-}
+    }
 
 .borderP {
     width: 80%;
@@ -321,8 +247,8 @@ header > .mainheader h1 {
     margin-left: 15%;
     position: relative;
     top: -115px;
-    margin-left: 70px;
-    font-size: 1.2rem;
+margin-left: 70px;
+font-size: 1.2rem;
     grid-column-start: 2;
     grid-column-end: 4;
     grid-row-start: 6;
@@ -340,11 +266,9 @@ button {
     border-style: none;
     margin: 5px 5px;
     opacity: 0.8;
-    cursor: pointer;
-    position: absolute;
-    top: 40%;
-    left: 57%;
-    grid-column-start: 6;
+cursor: pointer;
+
+   grid-column-start: 6;
     grid-column-end: 7;
     grid-row-start: 6;
     grid-row-end: 7;
@@ -353,27 +277,25 @@ button {
 .coverimg {
     height: auto;
     width: 100%;
-    grid-column-start: 4;
+      grid-column-start: 4;
     grid-column-end: 8;
     grid-row-start: 1;
     height: 900px;
 
 }
-
-.coverimg img {
+.coverimg img{
     max-width: 100%;
     height: auto;
 }
 
 /******* main ********/
 
-main {
+main{
     display: flex;
     flex-direction: column;
 }
-
-main .events-list-title {
-    display: flex;
+main .events-list-title{
+       display: flex;
     width: 40%;
     margin-left: 100px;
     margin-bottom: 50px;
@@ -385,7 +307,7 @@ main .events-list-title {
 
 }
 
-main > #cards-wrapper {
+main > .cards-wrapper {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 
@@ -396,45 +318,35 @@ main > #cards-wrapper {
     z-index: 10;
 }
 
-main > #cards-wrapper .calendar-card {
+main > .cards-wrapper .calendar-card {
     background: #e7f1f3;
+    /*    height: 300px;*/
     padding: 10px;
 }
 
-main > #cards-wrapper .calendar-card .card-details {
+main > .cards-wrapper .calendar-card .card-details {
     padding: 5px;
 }
 
-main > #cards-wrapper .calendar-card .card-details p {
+main > .cards-wrapper .calendar-card .card-details p {
     font-size: 0.8rem;
     text-transform: capitalize;
 }
 
-main > #cards-wrapper .calendar-card .card-header img {
+main > .cards-wrapper .calendar-card .card-header img {
     max-width: 100%;
     height: auto;
 }
 
-main > #cards-wrapper .calendar-card .arrow-button img {
+main > .cards-wrapper .calendar-card .arrow-button img {
     max-width: 60%;
     height: auto;
     margin-top: 20px;
-    position: absolute;
-    left: 27%;
 }
-
-
-/**** artists *****/
-
-.artistscoverimg img {
-    width: 100%;
-    left: 27%;
-}
-
-main .bottom-box {
-    border: 5px #d1a343 solid;
-    border-top: none;
-    width: 100%;
+main .bottom-box{
+   border: 5px #d1a343 solid;
+border-top: none;
+    width: 90%;
     height: 200px;
     justify-content: center;
     align-self: center;
@@ -443,15 +355,21 @@ main .bottom-box {
     z-index: 1;
     position: relative;
 }
+main .bottom-box > h2{
+ position: absolute;
+    bottom: -20px;
+    right: 270px;
+    z-index: 10
 
-main .bottom-box > h2 {
-    position: absolute;
-    bottom: 20px;
-    right: 200px;
-    z-index: 10;
-    cursor: pointer;
 }
 
+
+/**** artists *****/
+
+.artistscoverimg img{
+    width: 100%;
+    left: 27%;
+}
 
 
 .mainartists .border {
@@ -464,7 +382,7 @@ main .bottom-box > h2 {
     left: 10%;
 }
 
-.mainartists h1 {
+.mainartists h1{
     font-family: arial black, sans-serif;
     font-size: 70px;
     width: 70%;
@@ -487,7 +405,7 @@ h2.artiststitle {
     margin: 5%;
 }
 
-img.artist {
+img.artist{
     width: 250px;
     height: auto;
     position: relative;
@@ -510,15 +428,15 @@ img.artist {
 
 }
 
-.bottom-box h2 {
-    position: absolute;
+.bottom-box h2{
+ position: absolute;
     bottom: -5px;
     right: 100px;
 
 }
 
 
-.allartists .bottom-box {
+.allartists .bottom-box{
     border: 10px #d1a343 solid;
     border-top: none;
     width: 98%;
@@ -530,3 +448,6 @@ img.artist {
     margin: 0 1% 0 1%;
     top: -100px;
 }
+
+
+
