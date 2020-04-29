@@ -21,13 +21,21 @@ body {
     margin: 0;
     overflow-x: hidden;
 
+
   /* display: grid;
+
+/*
+  display: grid;
     grid-template-columns: 5% 1fr 1fr 1fr 1fr 5%;
     grid-template-rows: auto;
     grid-template-areas:
         ". header header header header ."
         ". main main main main ."
-        ". footer footer footer footer ."; */
+        ". footer footer footer footer .";
+
+        ". footer footer footer footer .";
+*/
+
 
 }
 
