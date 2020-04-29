@@ -1,0 +1,10 @@
+.footer {display: grid;
+         grid-template-columns: 1fr 1fr 1fr;
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        grid-gap: 10%;}
+
+.so-me {float: left;}
+
+.so-me img {width: 20%;}
