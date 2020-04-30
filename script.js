@@ -15,9 +15,22 @@ function setupBurgherNav() {
     });
 }
 /*******************************************************/
+/***** modal *****/
+
+const calendarModal = document.querySelector(".calendar-modal");
+const exitBtn = document.querySelector(".exit");
 
 
+exitBtn.addEventListener("click", () => {
+    calendarModal.classList.add("hide-calendar");
+});
+document.querySelector(".calendar-btn").addEventListener("click", showCalendarModal);
 
+function showCalendarModal() {
+
+
+    calendarModal.classList.remove("hide-calendar");
+}
 
 /*********************** Get Data from WP **************************/
 
@@ -30,18 +43,46 @@ window.addEventListener("DOMContentLoaded", getData);
 
 /***** fetch Data *****/
 
-function getData(){
+function getData() {
     fetch(link1)
-    .then(function(response){
-        return response.json();
-    })
-    .then(showData);
+        .then(function (response) {
+            return response.json();
+        })
+        .then(handleData);
 }
 
-function showData(artArray){
-   console.log(artArray, "artArray");
+
+/***** filter section *****/
+
+function handleData(artArray) {
+
+    const filterBtns = document.querySelectorAll(".filter-btn");
+    filterBtns.forEach(filterBtn => {
+        //            console.log('this is button in loop', filterBtn)
+
+        filterBtn.addEventListener("click", filterArtArray);
+
+    })
+
+    function filterArtArray(e) {
+        artArray.forEach(item =>{
+            console.log('yes', item._embedded.)
+        })
+
+        console.log(e.currentTarget.textContent);
+//    const res =  artArray.filter(item => artArray._embedded === e.currentTarget.textContent)
+
+    }
+     showData(artArray)
+
+}
+
+
+
+function showData(artArray) {
+       console.log(artArray, "artArray");
     artArray.forEach(art => {
-        console.log(art,"LoopTest");
+        //        console.log(art,"LoopTest");
 
         const template = document.querySelector("template").content;
 
@@ -51,7 +92,7 @@ function showData(artArray){
         copy.querySelector('.artCat').textContent = art._embedded["wp:term"][1][0].name;
         copy.querySelector('.gallery-name').textContent = art.gallery_name;
         copy.querySelector('.artist-name').textContent = art.artist_name;
-//        copy.querySelector('.event-adress').textContent = art._embedded["wp:term"][3][0].name;
+        //        copy.querySelector('.event-adress').textContent = art._embedded["wp:term"][3][0].name;
         copy.querySelector('.event-adress').textContent = art.address;
 
 
@@ -64,5 +105,3 @@ function showData(artArray){
 }
 
 /*********************************************************************************************************/
-
-
