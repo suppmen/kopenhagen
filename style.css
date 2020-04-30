@@ -1,6 +1,5 @@
 /*
-=======
->>>>>>> responsive
+
 header {
     grid-area: header;
 }
@@ -12,9 +11,8 @@ main {
 footer {
     grid-area: footer;
 }
-<<<<<<< HEAD
 */
-=======* {
+* {
     box-sizing: border-box;
 }
 
@@ -26,9 +24,8 @@ body {
 
     /*
   display: grid;
-=======
+
     display: grid;
->>>>>>> responsive
     grid-template-columns: 5% 1fr 1fr 1fr 1fr 5%;
     grid-template-rows: auto;
     grid-template-areas:
@@ -145,6 +142,7 @@ header nav.open {
     justify-content: center;
     flex-flow: column;
     align-items: center;
+    position: fixed;
 }
 
 /********** Burger *********/
@@ -402,9 +400,6 @@ main > .cards-wrapper .calendar-card .arrow-button img {
     margin-top: 20px;
 
 }
-
-
-/************ Footer ************/
 
 
 
