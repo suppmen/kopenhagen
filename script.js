@@ -53,8 +53,8 @@ function showData(artArray){
         copy.querySelector('.artist-name').textContent = art.artist_name;
 //        copy.querySelector('.event-adress').textContent = art._embedded["wp:term"][3][0].name;
         copy.querySelector('.event-adress').textContent = art.address;
-
-
+//        copy.querySelector('img').src = art._embedded["wp:featuredmedia"][0].source_url;
+        copy.querySelector("img").src = art._embedded["wp:featuredmedia"][0].media_details.sizes.medium.source_url;
 
 
         document.querySelector(".cards-wrapper").appendChild(copy);

@@ -150,6 +150,7 @@ header nav.open {
     justify-content: center;
     flex-flow: column;
     align-items: center;
+    position: fixed;
 }
 
 /********** Burger *********/
@@ -407,9 +408,6 @@ main > .cards-wrapper .calendar-card .arrow-button img {
     margin-top: 20px;
 
 }
-
-
-/************ Footer ************/
 
 
 
