@@ -11,6 +11,7 @@ main {
 footer {
     grid-area: footer;
 }
+
 */
 * {
     box-sizing: border-box;
@@ -22,6 +23,10 @@ body {
     overflow-x: hidden;
 
 
+
+  /* display: grid;
+
+/*
     /*
   display: grid;
 
@@ -32,7 +37,10 @@ body {
         ". header header header header ."
         ". main main main main ."
         ". footer footer footer footer .";
+
+        ". footer footer footer footer .";
 */
+
 
 }
 
@@ -713,6 +721,7 @@ img.artist {
         grid-row-start: 1;
 
     }
+
 
     .border {
         margin-top: 20px;
