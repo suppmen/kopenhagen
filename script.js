@@ -66,7 +66,7 @@ function handleData(artArray) {
 
     function filterArtArray(e) {
         artArray.forEach(item =>{
-            console.log('yes', item._embedded.)
+//            console.log('yes', item._embedded.)
         })
 
         console.log(e.currentTarget.textContent);
