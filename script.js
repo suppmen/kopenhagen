@@ -34,7 +34,7 @@ window.addEventListener("DOMContentLoaded", getData);
 function getData(){
     const urlParams = new URLSearchParams(window.location.search);
     console.log('URLSearchParams' + window.location);
-    const the_art_id = urlParams.get('art_calendar_id');
+    const the_art_id = urlParams.get('art_id');
     const link2 = "http://mymmd.dk/Kopenhagen/wp-json/wp/v2/art_calendar/"+the_art_id+"?per_page=100&_embed";
     console.log(the_art_id, "IdTest");
 
@@ -97,7 +97,7 @@ function showSingleArtPage(art){
         console.log(divArtDescription, "div");
 
     if(divArtDescription){
-        divArtDescription.innerHTML = art.content.rendered;
+        divArtDescription.innerHTML = art.long_description;
         copy.querySelector('.event-title').textContent = art.title.rendered;
         copy.querySelector('.artCat').textContent = art._embedded["wp:term"][1][0].name;
         copy.querySelector('.gallery-name').textContent = art.gallery_name;
