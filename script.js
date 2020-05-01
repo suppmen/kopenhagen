@@ -100,8 +100,8 @@ function showSingleArtPage(art){
         console.log(divArtDescription, "div");
 
 
-    if(art.long_description.length> 1){
-        divArtDescription.innerHTML = art.content.rendered;
+//    if(art.long_description.length> 1){
+//        divArtDescription.innerHTML = art.content.rendered;
     if(divArtDescription){
         divArtDescription.innerHTML = art.long_description;
 
@@ -120,6 +120,6 @@ function showSingleArtPage(art){
 
     };
 
-}
+
 
 /*********************************************************************************************************/
