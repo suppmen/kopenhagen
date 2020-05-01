@@ -404,7 +404,16 @@ header .filter .place{
       background-color: #ADE5DF;
     color: white;
 }
-
+/*
+.unchosen:hover{
+        background-color: #ADE5DF;
+    color: white;
+}
+.chosen{
+      background-color: #ADE5DF;
+    color: white;
+}
+*/
 
 
 

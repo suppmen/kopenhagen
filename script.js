@@ -56,31 +56,99 @@ function getData() {
 
 function handleData(artArray) {
 
-    const filterBtns = document.querySelectorAll(".filter-btn");
-    filterBtns.forEach(filterBtn => {
-        //            console.log('this is button in loop', filterBtn)
+    const typeBtns = document.querySelectorAll(".type-btn");
+    const placeBtns = document.querySelectorAll(".place-btn");
 
-        filterBtn.addEventListener("click", filterArtArray);
+    console.log('this is button in loop', typeBtns)
+
+    typeBtns.forEach(filterTypeBtn => {
+
+        filterTypeBtn.addEventListener("click", filterArray);
 
     })
 
-    function filterArtArray(e) {
-        artArray.forEach(item =>{
-//            console.log('yes', item._embedded.)
-        })
+    placeBtns.forEach(filterPlaceBtn => {
 
-        console.log(e.currentTarget.textContent);
-//    const res =  artArray.filter(item => artArray._embedded === e.currentTarget.textContent)
+        filterPlaceBtn.addEventListener("click", filterArray);
+
+    })
+
+    function filterArray(e) {
+        console.log('element name', e.currentTarget.className);
+
+        if (e.currentTarget.classList.contains('type-btn')) {
+            typeBtns.forEach(typeBtn => {
+                console.log(typeBtn, 'inside typebtn');
+
+                if (typeBtn !== e.currentTarget) {
+                    typeBtn.style.backgroundColor = 'white';
+                    typeBtn.style.color = '#b7b7b7';
+
+
+                } else {
+
+
+                    typeBtn.style.backgroundColor = '#ADE5DF';
+                    typeBtn.style.color = 'white';
+
+                }
+
+            });
+
+            console.log(e.currentTarget.textContent);
+            const typeRes = artArray.filter(item => item._embedded["wp:term"][1][0].name === e.currentTarget.textContent);
+            console.log('yes res array', typeRes)
+
+        } else if (e.currentTarget.classList.contains('place-btn')) {
+            placeBtns.forEach(placeBtn => {
+                console.log(placeBtn, 'inside typebtn');
+
+                if (placeBtn !== e.currentTarget) {
+                    placeBtn.style.backgroundColor = 'white';
+                    placeBtn.style.color = '#b7b7b7';
+
+
+                } else {
+
+
+                    placeBtn.style.backgroundColor = '#ADE5DF';
+                    placeBtn.style.color = 'white';
+
+                }
+
+            });
+
+
+            console.log(e.currentTarget.textContent);
+            artArray.forEach(item => {
+
+                if (item._embedded["wp:term"][3][0]) {
+                    console.log(item._embedded["wp:term"][3][0].name, 'in place');
+
+                }
+
+
+            })
+                            const placeRes = artArray.filter(item => {
+                                if (item._embedded["wp:term"][3][0]){
+                             return   item._embedded["wp:term"][3][0].name === e.currentTarget.textContent
+                            }} );
+
+            console.log('yes res array', placeRes)
+
+
+        }
+
+
 
     }
-     showData(artArray)
 
 }
 
 
 
 function showData(artArray) {
-       console.log(artArray, "artArray");
+    console.log(artArray, "artArray");
     artArray.forEach(art => {
         //        console.log(art,"LoopTest");
 
