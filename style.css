@@ -527,6 +527,19 @@ img.artist {
 }
 
 
+/************* Artists Sorting ****************/
+.ArtistNamesSorting{
+    padding: 0 1em 0 2em;
+     display: inline-flex;
+      align-items:baseline;
+}
+.sorting{
+    padding: 0 1em 0 2em;
+}
+
+.hide{
+    display: none;
+}
 
 @media screen and (max-width: 1000px) {
 

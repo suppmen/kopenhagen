@@ -23,7 +23,7 @@ function setupBurgherNav() {
 
 const link0 = "http://mymmd.dk/Kopenhagen/wp-json/wp/v2/art_calendar?per_page=100";
 const link1 = "http://mymmd.dk/Kopenhagen/wp-json/wp/v2/art_calendar?per_page=100&_embed";
-
+const link2 = "http://mymmd.dk/Kopenhagen/wp-json/wp/v2/artists?perpage=100&_embed"
 window.addEventListener("DOMContentLoaded", getData);
 
 
@@ -32,16 +32,23 @@ window.addEventListener("DOMContentLoaded", getData);
 /***** fetch Data *****/
 
 function getData(){
+
+    fetch(link2)
+    .then(function(response){
+        return response.json();
+    })
+    .then(showArtistsArray);
+
     const urlParams = new URLSearchParams(window.location.search);
     console.log('URLSearchParams' + window.location);
     console.log('urlParams', urlParams);
 
     const the_art_id = urlParams.get('art_id');
-    const link2 = "http://mymmd.dk/Kopenhagen/wp-json/wp/v2/art_calendar/"+the_art_id+"?per_page=100&_embed";
-    console.log(the_art_id, "IdTest");
+    const link3 = "http://mymmd.dk/Kopenhagen/wp-json/wp/v2/art_calendar/"+the_art_id+"?per_page=100&_embed";
+//    console.log(the_art_id, "IdTest");
 
     if (the_art_id){
-        fetch(link2)
+        fetch(link3)
         .then(function(response){
             return response.json()
         })
@@ -56,10 +63,14 @@ function getData(){
 }
 
 
+
 function showArt_CalendarData(artArray){
 //   console.log(artArray, "artArray");
+
+    //Loop through
     artArray.forEach(art => {
 //        console.log(art,"LoopTest");
+
 
         const template = document.querySelector("template").content;
 
@@ -86,6 +97,35 @@ function showArt_CalendarData(artArray){
 
     });
 
+}
+
+function showArtistsArray(artists){
+    let artistNames = [];
+
+  artists.forEach(Artist =>{
+//      console.log(Artist.name);
+      artistNames.push(Artist.name);
+//      console.log(artistNames);
+  });
+    artistNames.sort();
+//    console.log(artistNames);
+    artistNames.forEach(ShowArtists);
+}
+
+function ShowArtists(Names){
+    const li = document.createElement("li");
+    li.textContent = Names;
+    const firstLetter = Names.charAt(0);
+//    console.log(Names);
+    console.log(".getArtists ." + firstLetter)
+    const elem = document.querySelector(".getArtists #" + firstLetter);
+    elem.appendChild(li);
+
+    const p = document.querySelector(".ArtistFirstLetter");
+
+    if (elem > li) {
+        elem.classList.remove("hide");
+    }
 }
 
 
