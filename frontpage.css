@@ -286,7 +286,7 @@ header > .mainheader h1 {
     margin-left: 10%;
     margin-top: 10%;
     grid-column-start: 1;
-    grid-column-end: 7;
+    grid-column-end: 6;
     grid-row-start: 5;
     grid-row-end: 8;
 }
@@ -303,7 +303,7 @@ header > .mainheader h1 {
 
 
 
-button {
+.calendar-btn  {
     background-color: #ADE5DF;
     height: 70px;
     border-radius: 3rem;
@@ -312,28 +312,26 @@ button {
     text-decoration: none;
     font-size: 30px;
     border-style: none;
-
     margin: 5px 5px;
-    opacity: 0.8;
-    cursor: pointer;
-
 
     cursor: pointer;
 
-    margin-right: 100px;
+    margin-right:;
 
 
-    grid-column-start: 9;
-    grid-row-start: 5;
+    grid-column-start: 10;
+    grid-row-start:7;
     /*    grid-row-end: ;*/
 }
+
+.calendar-btn:hover {
+     background-color: orange;}
 
 .coverimg {
     height: auto;
     width: 100%;
     grid-column-start: 5;
-    grid-column-end: -4;
-    grid-row-start: 0;
+    grid-column-end: -3;
     margin-top: -10%;
     margin-left: 10%;
 
