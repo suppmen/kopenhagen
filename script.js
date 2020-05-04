@@ -32,7 +32,7 @@ window.addEventListener("DOMContentLoaded", getData);
 /***** fetch Data *****/
 
 function getData(){
-
+    //Artist Names Sorting
     fetch(link2)
     .then(function(response){
         return response.json();
@@ -40,20 +40,36 @@ function getData(){
     .then(showArtistsArray);
 
     const urlParams = new URLSearchParams(window.location.search);
-    console.log('URLSearchParams' + window.location);
-    console.log('urlParams', urlParams);
-
+//    console.log('URLSearchParams' + window.location);
+//    console.log('urlParams', urlParams);
     const the_art_id = urlParams.get('art_id');
+    const search_term = urlParams.get('searchTerm');
     const link3 = "https://mymmd.dk/Kopenhagen/wp-json/wp/v2/art_calendar/"+the_art_id+"?per_page=100&_embed";
-//    console.log(the_art_id, "IdTest");
-
+    console.log(the_art_id, "IdTest");
+    const link4 = "https://mymmd.dk/Kopenhagen/wp-json/wp/v2/art_calendar?search=" +search_term+"&_embed"
+    console.log(search_term, "SearchTest");
     if (the_art_id){
         fetch(link3)
         .then(function(response){
             return response.json()
         })
         .then(showSingleArtPage)
-    }else{
+    }
+
+    else if(search_term){
+        fetch(link4)
+        .then(function(response){
+            return response.json()
+        })
+        .then(showArt_CalendarData)
+    }
+
+
+
+
+
+
+    else{
     fetch(link1)
     .then(function(response){
         return response.json();
@@ -131,7 +147,7 @@ function ShowArtists(Names){
 
 function showSingleArtPage(art){
         console.log(art, "art");
-
+        console.log(window.location);
         const template = document.querySelector("template").content;
 
         const copy = template.cloneNode(true);
