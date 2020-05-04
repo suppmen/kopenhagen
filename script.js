@@ -52,7 +52,6 @@ window.addEventListener("DOMContentLoaded", getData(typeId, placeId));
 
 function getData(typeId, placeId){
 
-function getData(){
     //Artist Names Sorting
     fetch(link2)
     .then(function(response){
@@ -79,13 +78,6 @@ function getData(){
         .then(showSingleArtPage)
     }
 
-    else if{
-     fetch(link5)
-        .then(function (response) {
-            return response.json();
-        })
-        .then(showData);
-    }
 
     else if(search_term){
         fetch(link4)
@@ -95,19 +87,16 @@ function getData(){
         .then(showArt_CalendarData)
     }
 
-
-
-
-    else{
-    fetch(link1)
-    .then(function(response){
-        return response.json();
-    })
-    .then(showArt_CalendarData);
-}
+     else{
+     fetch(link5)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(showData);
+    }
 }
 
-}
+
 
 
 
