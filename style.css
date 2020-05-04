@@ -528,6 +528,18 @@ img.artist {
 
 
 /************* Artists Sorting ****************/
+.getArtists{
+    padding: 0 1em 0 2em;
+     display: inline-flex;
+      align-items:baseline;
+}
+
+.ArtistFirstLetter{
+    background-color: #d1a343;
+    text-align: center;
+}
+
+/*
 .ArtistNamesSorting{
     padding: 0 1em 0 2em;
      display: inline-flex;
@@ -536,6 +548,7 @@ img.artist {
 .sorting{
     padding: 0 1em 0 2em;
 }
+*/
 
 .hide{
     display: none;
