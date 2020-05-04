@@ -55,18 +55,19 @@ header {
 header > .navigation-bar {
     grid-column: 12/-1;
     width: 100%;
-    z-index: 120;
+    z-index: 130;
     display: flex;
     background: none;
 }
 
 header > .navigation-bar .burger {
-
+position: absolute;
     width: 35px;
     z-index: 130;
     margin-top: 15px;
     cursor: pointer;
 }
+
 
 header .logo {
     background-image: url(LogoImage/KopenhagenArt_logo-01.svg);
@@ -132,7 +133,7 @@ h1 {
 header nav {
     position: absolute;
     right: -140vw;
-    z-index: 100;
+    z-index: 120;
 display: none;
     background: white;
     width: 100vw;
@@ -203,6 +204,7 @@ rect:nth-child(3) {
     transform: translate(-50%, -50%) height: 25px;
     border-radius: 25px;
     background: darkgray;
+    z-index: 10;
 }
 
 .search-box:hover > .search-txt {
@@ -307,7 +309,7 @@ header > .mainheader h1 {
     grid-row-end: 10;
 }
 
-button {
+ .calendar-btn{
     background-color: #ADE5DF;
     height: 70px;
     border-radius: 3rem;
@@ -318,11 +320,10 @@ button {
     border-style: none;
 
     margin: 5px 5px;
-    opacity: 0.8;
-    cursor: pointer;
+  cursor: pointer;
 
 
-    cursor: pointer;
+
 
     margin-right: 100px;
 
@@ -330,6 +331,212 @@ button {
     grid-column-start: 9;
     grid-row-start: 5;
     /*    grid-row-end: ;*/
+}
+
+/* calendar modal */
+
+
+.calendar-modal {
+    position: fixed;
+    z-index: 200;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #e7f1f3;
+    display: flex;
+/*    justify-content: space-around;*/
+    justify-content: center;
+    padding: 50px;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+}
+.calendar-modal section {
+ margin: 50px;
+}
+
+
+.hide-calendar{
+    display: none;
+}
+
+header .calendar-modal  .exit {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    height: 35px;
+    width: 35px;
+    cursor: pointer;
+}
+header .calendar-modal  .exit  svg{
+
+    height: 35px;
+    width: 35px;
+}
+header .filter{
+    display: flex;
+    flex-wrap: wrap;
+}
+header .filter .type-btn-wrapper{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+/*    align-items: flex-start;*/
+}
+header .filter .type,.place{
+    text-align: center;
+}
+header .filter .place{
+   margin-left: 20px;
+}
+.filter-btn{
+/*      background-color: #ADE5DF;*/
+    height: 50px;
+    border-radius: 3rem;
+/*    color: white;*/
+    color: #b7b7b7;
+    background: white;
+    padding: 0px 20px;
+    text-decoration: none;
+    font-size: 1rem;
+    border-style: none;
+
+    margin: 5px 5px;
+  cursor: pointer;
+
+}
+.filter-btn:hover{
+      background-color: #ADE5DF;
+    color: white;
+}
+/*
+.unchosen:hover{
+        background-color: #ADE5DF;
+    color: white;
+}
+.chosen{
+      background-color: #ADE5DF;
+    color: white;
+}
+*/
+
+
+
+.calendar-wrapper{
+      max-width: max-content;
+/*  background-color: #fff;*/
+/*  border: 2px solid var(--blue-grey-200);*/
+/*  border-radius: 8px;*/
+}
+
+.month-indicator {
+  color: var(--blue-grey-700);
+  text-align: center;
+  font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.date-grid button {
+  position: relative;
+  border: 0;
+  width: 7ch;
+  height: 7ch;
+  border-radius: 50%;
+  background-color: transparent;
+  color: var(--blue-grey-600);
+}
+
+
+:root {
+  --teal-050: #effcf6;
+  --teal-100: #c6f7e2;
+  --teal-200: #8eedc7;
+  --teal-300: #65d6ad;
+  --teal-400: #3ebd93;
+  --teal-500: #27ab83;
+  --teal-600: #199473;
+  --teal-700: #147d64;
+  --teal-800: #0c6b58;
+  --teal-900: #014d40;
+
+  --blue-grey-050: #f0f4f8;
+  --blue-grey-100: #d9e2ec;
+  --blue-grey-200: #bcccdc;
+  --blue-grey-300: #9fb3c8;
+  --blue-grey-400: #829ab1;
+  --blue-grey-500: #627d98;
+  --blue-grey-600: #486581;
+  --blue-grey-700: #334e68;
+  --blue-grey-800: #243b53;
+  --blue-grey-900: #102a43;
+}
+
+
+
+
+
+
+
+.month-indicator {
+  color: var(--blue-grey-700);
+  text-align: center;
+  font-weight: 500;
+    font-size: 1.5rem;
+}
+
+
+.day-of-week,
+.date-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.day-of-week {
+  margin-top: 1.25em;
+}
+
+.day-of-week > * {
+  font-size: 0.9em;
+  color: var(--blue-grey-400);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  font-variant: small-caps;
+  text-align: center;
+}
+
+/* Dates */
+.date-grid {
+  margin-top: 0.5em;
+}
+
+/* Positioning the first day */
+.date-grid button:first-child {
+  grid-column: 6;
+}
+
+
+.date-grid button {
+  position: relative;
+  border: 0;
+  width: 7ch;
+  height: 7ch;
+  border-radius: 50%;
+  background-color: transparent;
+  color: var(--blue-grey-600);
+}
+
+.date-grid button:hover,
+.date-grid button:focus {
+  outline: none;
+  background-color: var(--blue-grey-050);
+  color: var(--blue-grey-700);
+}
+
+.date-grid button:active,
+.date-grid button.is-selected {
+  background-color: var(--teal-100);
+  color: var(--teal-900);
 }
 
 .coverimg {
@@ -347,6 +554,35 @@ button {
     max-width: 100%;
     height: auto;
 }
+
+
+/*calendar submit*/
+
+header .arrow-button  img{
+    width: 100px;
+    height: auto;
+
+}
+
+header .go-arrow-wrapper{
+
+ align-self: center;
+}
+header .arrow-button  {
+   display: flex;
+    align-items: center;
+        justify-content: center;
+        height: 100%;
+
+
+
+}
+header .arrow-button  a{
+color: black;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
 
 /******* main ********/
 
@@ -497,8 +733,8 @@ img.artist {
 
 }
 
-.arrow-button {
-    width: 40%;
+main .arrow-button {
+    width: 60%;
     height: auto;
     margin: 10%;
     padding-top: 5%;
@@ -597,7 +833,7 @@ img.artist {
         grid-column-end: 7;
     }
 
-    button {
+    .calendar-btn {
 
 
         margin-right: 0;
@@ -686,7 +922,7 @@ img.artist {
         grid-column-end: 10;
     }
 
-    button {
+   .calendar-btn{
 
 
         margin-right: 0;
@@ -771,7 +1007,7 @@ img.artist {
         grid-row-start: 7;
     }
 
-    button {
+    .calendar-btn {
 
 
         margin-right: 0;
@@ -792,7 +1028,7 @@ img.artist {
         position: fixed;
         bottom: 0;
         right: 0;
-        z-index: 120;
+        z-index: 130;
         width: 100%;
         cursor: pointer;
         display: flex;
