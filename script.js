@@ -1,4 +1,6 @@
 /*********** toggeling the burger and nav ************/
+var typeId = "";
+var placeId = "";
 
 window.addEventListener("load", setup);
 
@@ -14,7 +16,7 @@ function setupBurgherNav() {
         nav.classList.toggle("open");
     });
 }
-/*******************************************************/
+
 /***** modal *****/
 
 const calendarModal = document.querySelector(".calendar-modal");
@@ -34,123 +36,136 @@ function showCalendarModal() {
 
 /*********************** Get Data from WP **************************/
 
-const link0 = "http://mymmd.dk/Kopenhagen/wp-json/wp/v2/art_calendar?per_page=100";
-const link1 = "http://mymmd.dk/Kopenhagen/wp-json/wp/v2/art_calendar?per_page=100&_embed";
-window.addEventListener("DOMContentLoaded", getData);
+const link0 = "https://mymmd.dk/Kopenhagen/wp-json/wp/v2/art_calendar?per_page=100";
+const link1 = "https://mymmd.dk/Kopenhagen/wp-json/wp/v2/art_calendar?per_page=100&_embed";
+window.addEventListener("DOMContentLoaded", getData(typeId, placeId));
 
 
 
 
 /***** fetch Data *****/
 
-function getData() {
-    fetch(link1)
+function getData(typeId, placeId) {
+    fetch("https://mymmd.dk/Kopenhagen/wp-json/wp/v2/art_calendar?_embed&place=" + placeId + "&calendar=" + typeId + "&per_page=100")
         .then(function (response) {
             return response.json();
         })
-        .then(handleData);
+        .then(showData);
 }
 
 
 /***** filter section *****/
 
-function handleData(artArray) {
-
-    const typeBtns = document.querySelectorAll(".type-btn");
-    const placeBtns = document.querySelectorAll(".place-btn");
-
-    console.log('this is button in loop', typeBtns)
-
-    typeBtns.forEach(filterTypeBtn => {
-
-        filterTypeBtn.addEventListener("click", filterArray);
-
-    })
-
-    placeBtns.forEach(filterPlaceBtn => {
-
-        filterPlaceBtn.addEventListener("click", filterArray);
-
-    })
-
-    function filterArray(e) {
-        console.log('element name', e.currentTarget.className);
-
-        if (e.currentTarget.classList.contains('type-btn')) {
-            typeBtns.forEach(typeBtn => {
-                console.log(typeBtn, 'inside typebtn');
-
-                if (typeBtn !== e.currentTarget) {
-                    typeBtn.style.backgroundColor = 'white';
-                    typeBtn.style.color = '#b7b7b7';
 
 
-                } else {
+const typeBtns = document.querySelectorAll(".type-btn");
+const placeBtns = document.querySelectorAll(".place-btn");
+
+console.log('this is button in loop', typeBtns)
+
+typeBtns.forEach(filterTypeBtn => {
+
+    filterTypeBtn.addEventListener("click", filterArray);
+
+})
+
+placeBtns.forEach(filterPlaceBtn => {
+
+    filterPlaceBtn.addEventListener("click", filterArray);
+
+})
+
+function filterArray(e) {
+
+    if (e.currentTarget.classList.contains('type-btn')) {
+        typeBtns.forEach(typeBtn => {
+
+            if (typeBtn !== e.currentTarget) {
+                typeBtn.style.backgroundColor = 'white';
+                typeBtn.style.color = '#b7b7b7';
 
 
-                    typeBtn.style.backgroundColor = '#ADE5DF';
-                    typeBtn.style.color = 'white';
-
-                }
-
-            });
-
-            console.log(e.currentTarget.textContent);
-            const typeRes = artArray.filter(item => item._embedded["wp:term"][1][0].name === e.currentTarget.textContent);
-            console.log('yes res array', typeRes)
-
-        } else if (e.currentTarget.classList.contains('place-btn')) {
-            placeBtns.forEach(placeBtn => {
-                console.log(placeBtn, 'inside typebtn');
-
-                if (placeBtn !== e.currentTarget) {
-                    placeBtn.style.backgroundColor = 'white';
-                    placeBtn.style.color = '#b7b7b7';
+            } else {
 
 
-                } else {
+                typeBtn.style.backgroundColor = '#ADE5DF';
+                typeBtn.style.color = 'white';
+
+            }
+
+        });
+
+        console.log('this is element id: ', e.currentTarget.id);
+        typeId = e.currentTarget.id;
+        console.log('this is typeId: ', typeId);
+        document.querySelector(".type-headline").textContent = e.currentTarget.textContent;
 
 
-                    placeBtn.style.backgroundColor = '#ADE5DF';
-                    placeBtn.style.color = 'white';
+    } else if (e.currentTarget.classList.contains('place-btn')) {
+        placeBtns.forEach(placeBtn => {
+            console.log(placeBtn, 'inside typebtn');
 
-                }
-
-            });
-
-
-            console.log(e.currentTarget.textContent);
-            artArray.forEach(item => {
-
-                if (item._embedded["wp:term"][3][0]) {
-                    console.log(item._embedded["wp:term"][3][0].name, 'in place');
-
-                }
+            if (placeBtn !== e.currentTarget) {
+                placeBtn.style.backgroundColor = 'white';
+                placeBtn.style.color = '#b7b7b7';
 
 
-            })
-                            const placeRes = artArray.filter(item => {
-                                if (item._embedded["wp:term"][3][0]){
-                             return   item._embedded["wp:term"][3][0].name === e.currentTarget.textContent
-                            }} );
-
-            console.log('yes res array', placeRes)
+            } else {
 
 
-        }
+                placeBtn.style.backgroundColor = '#ADE5DF';
+                placeBtn.style.color = 'white';
 
+            }
+
+        });
+
+
+        console.log(e.currentTarget.textContent);
+
+
+
+
+
+        placeId = e.currentTarget.id;
+        console.log('this is placeId: ', placeId);
+        document.querySelector(".place-headline").textContent = e.currentTarget.textContent;
 
 
     }
 
+
+    console.log('this is typeId AFTER: ', typeId);
+    console.log('this is placeId AFTER: ', placeId);
+    getData(typeId, placeId)
+
+    const goBtn = document.querySelector(".go-arrow-wrapper");
+    goBtn.addEventListener('click', submitCalendar);
 }
 
 
 
+function submitCalendar() {
+    console.log('in submit data ');
+    calendarModal.classList.add("hide-calendar");
+}
+
+function clearData(artArray) {
+
+}
+
+
 function showData(artArray) {
     console.log(artArray, "artArray");
+    const parent = document.querySelector(".cards-wrapper");
+
+    if (parent.childNodes.length > 1){
+        while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+    }
+
     artArray.forEach(art => {
-        //        console.log(art,"LoopTest");
 
         const template = document.querySelector("template").content;
 
@@ -166,9 +181,11 @@ function showData(artArray) {
 
 
 
-        document.querySelector(".cards-wrapper").appendChild(copy);
+        parent.appendChild(copy);
+
 
     });
+
 
 }
 
