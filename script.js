@@ -249,7 +249,10 @@ function ShowArtists(Names){
 //    console.log(Names);
     console.log(".getArtists #" + firstLetter)
     const elem = document.querySelector(".getArtists #" + firstLetter);
+    if (elem){
     elem.appendChild(li);
+
+    }
 
     const p = document.querySelector(".ArtistFirstLetter");
 
