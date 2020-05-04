@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="">
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
+    <title>search</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="footer.css" />
 </head>
+
 <body>
     <header>
         <div class="logo-wrapper">
@@ -33,9 +35,9 @@
 
                 <input class="search-txt" type="search" name="searchTerm" placeholder="Search here" />
 
-                <a class="search-btn" href="">
+                <div class="search-btn" href="">
                     <i class="fas fa-search"></i>
-                </a>
+                </div>
 
             </form>
 
@@ -52,6 +54,151 @@
         </nav>
 
 
+        <article class="calendar-modal hide-calendar">
+            <div class="exit">
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="49.637" height="49.619" viewBox="0 0 49.637 49.619">
+                    <path id="window-close" d="M200.846,162.205,186.192,176.86l14.654,14.654a2.852,2.852,0,0,1,0,4.01l-5.322,5.322a2.852,2.852,0,0,1-4.01,0L176.86,186.192l-14.654,14.654a2.852,2.852,0,0,1-4.01,0l-5.322-5.322a2.852,2.852,0,0,1,0-4.01l14.654-14.654-14.654-14.654a2.852,2.852,0,0,1,0-4.01l5.322-5.322a2.852,2.852,0,0,1,4.01,0l14.654,14.654,14.654-14.654a2.852,2.852,0,0,1,4.01,0l5.322,5.322A2.809,2.809,0,0,1,200.846,162.205Z" transform="translate(-152.05 -152.05)" fill="#707070" />
+                </svg>
+
+            </div>
+            <secrion class="filter">
+                <div class="type">
+                    <h2>Type</h2>
+                    <div class="type-btn-wrapper">
+                        <button id="7" class="filter-btn type-btn">Events</button>
+                        <button id="6" class="filter-btn type-btn">Exhibition</button>
+                        <button class="filter-btn type-btn">Interview</button>
+                        <button class="filter-btn type-btn">Article</button>
+                    </div>
+                </div>
+                <div class="place">
+                    <h2>Where</h2>
+                    <div class="type-btn-wrapper">
+                        <button id="11" class="filter-btn place-btn">Copenhagen</button>
+                        <button class="filter-btn place-btn">Aarheus</button>
+                        <button class="filter-btn place-btn">Malmo</button>
+                        <button class="filter-btn place-btn">Aalborg</button>
+                    </div>
+                </div>
+            </secrion>
+            <section class="calendar-wrapper">
+                <div class="calendar">
+                    <div class="month-indicator">
+                        <time datetime="2019-02"> May 2020 </time>
+                    </div>
+                    <div class="day-of-week">
+                        <div>Su</div>
+                        <div>Mo</div>
+                        <div>Tu</div>
+                        <div>We</div>
+                        <div>Th</div>
+                        <div>Fr</div>
+                        <div>Sa</div>
+                    </div>
+                    <div class="date-grid">
+                        <button>
+                            <time datetime="2019-02-01">1</time>
+                        </button>
+                        <button>
+                            <time datetime="2019-02-02">2</time>
+                        </button>
+                        <button>
+                            <time datetime="2019-02-03">3</time>
+                        </button>
+                        <button>
+                            <time datetime="2019-02-04">4</time>
+                        </button>
+                        <button>
+                            <time datetime="2019-02-05">5</time>
+                        </button>
+                        <button>
+                            <time datetime="2019-02-06">6</time>
+                        </button>
+                        <button>
+                            <time datetime="2019-02-07">7</time>
+                        </button>
+                        <button>
+                            <time datetime="2019-02-08">8</time>
+                        </button>
+                        <button>
+                            <time datetime="2019-02-09">9</time>
+                        </button>
+                        <button>
+                            <time datetime="2019-02-10">10</time>
+                        </button>
+                        <button>
+                            <time datetime="2019-02-11">11</time>
+                        </button>
+                        <button>
+                            <time datetime="2019-02-12">12</time>
+                        </button>
+                        <button>
+                            <time datetime="2019-02-13">13</time>
+                        </button>
+                        <button>
+                            <time datetime="2019-02-14">14</time>
+                        </button>
+                        <button>
+                            <time datetime="2019-02-15">15</time>
+                        </button>
+                        <button>
+                            <time datetime="2019-02-16">16</time>
+                        </button>
+                        <button>
+                            <time datetime="2019-02-17">17</time>
+                        </button>
+                        <button>
+                            <time datetime="2019-02-18">18</time>
+                        </button>
+                        <button>
+                            <time datetime="2019-02-19">19</time>
+                        </button>
+                        <button>
+                            <time datetime="2019-02-20">20</time>
+                        </button>
+                        <button>
+                            <time datetime="2019-02-21">21</time>
+                        </button>
+                        <button>
+                            <time datetime="2019-02-22">22</time>
+                        </button>
+                        <button>
+                            <time datetime="2019-02-23">23</time>
+                        </button>
+                        <button>
+                            <time datetime="2019-02-24">24</time>
+                        </button>
+                        <button>
+                            <time datetime="2019-02-25">25</time>
+                        </button>
+                        <button>
+                            <time datetime="2019-02-26">26</time>
+                        </button>
+                        <button>
+                            <time datetime="2019-02-27">27</time>
+                        </button>
+                        <button>
+                            <time datetime="2019-02-28">28</time>
+                        </button>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <section class="go-arrow-wrapper">
+                <div class="arrow-button">
+                    <a href="#main">GO</a>
+                    <a href="#main">
+                        <img src="/media/arrow-1-02.svg" alt="arrow" />
+                    </a>
+                </div>
+            </section>
+
+        </article>
+
+
         <section class="mainheader">
             <figure class="coverimg">
                 <img src="img/coverphoto.jpg" alt="cover photo" />
@@ -62,15 +209,17 @@
             <p class="borderP">
                 The most used art calendar in Denmark and southern parts of Sweden
             </p>
-            <button>CALENDAR</button>
+            <button class="calendar-btn">CALENDAR</button>
         </section>
     </header>
 
-    <main>
+    <main id="main">
 
         <div class="events-list-title">
-            <h1>Events</h1>
-            <h2>Copenhagen</h2>
+
+            <h1 class="type-headline">Events</h1>
+
+            <h2>in <span class="place-headline">Copenhagen</span></h2>
             <p>21 April 2020</p>
         </div>
 
@@ -83,7 +232,7 @@
     </main>
 
     <template>
-        <article class="calendar-card">
+        <article id="delete-me" class="calendar-card">
             <div class="card-header">
                 <img src="" alt="" />
             </div>
@@ -103,27 +252,27 @@
             </div>
         </article>
     </template>
-<footer class="footer">
-    <div class="footer-left">
-        <h2>Contact</h2>
-        <p>Tel:</p>
-        <p>Mail:</p>
-        <p>Adr:</p>
-    </div>
+    <footer class="footer">
+        <div class="footer-left">
+            <h2>Contact</h2>
+            <p>Tel:</p>
+            <p>Mail:</p>
+            <p>Adr:</p>
+        </div>
 
-    <div class="footer-center">
-    <h2>SoMe</h2>
-    <div class="so-me">
-    <img src="./icons/facebook-icon-01-01.png">
-    <img src="./icons/instagram-icon-02-02.png">
-    <img src="./icons/telephone-icon-03-03.png">
-    </div>
-    </div>
+        <div class="footer-center">
+            <h2>SoMe</h2>
+            <div class="so-me">
+                <img src="./icons/facebook-icon-01-01.png">
+                <img src="./icons/instagram-icon-02-02.png">
+                <img src="./icons/telephone-icon-03-03.png">
+            </div>
+        </div>
 
-    <div class="footer-right">
-    <h2>Join us</h2>
-    <p>© All rights reserved</p>
-    </div>
+        <div class="footer-right">
+            <h2>Join us</h2>
+            <p>© All rights reserved</p>
+        </div>
 
 
     </footer>
