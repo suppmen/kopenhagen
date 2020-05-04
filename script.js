@@ -21,9 +21,9 @@ function setupBurgherNav() {
 
 /*********************** Get Data from WP **************************/
 
-const link0 = "http://mymmd.dk/Kopenhagen/wp-json/wp/v2/art_calendar?per_page=100";
-const link1 = "http://mymmd.dk/Kopenhagen/wp-json/wp/v2/art_calendar?per_page=100&_embed";
-const link2 = "http://mymmd.dk/Kopenhagen/wp-json/wp/v2/artists?perpage=100&_embed"
+const link0 = "https://mymmd.dk/Kopenhagen/wp-json/wp/v2/art_calendar?per_page=100";
+const link1 = "https://mymmd.dk/Kopenhagen/wp-json/wp/v2/art_calendar?per_page=100&_embed";
+const link2 = "https://mymmd.dk/Kopenhagen/wp-json/wp/v2/artists?per_page=100&_embed"
 window.addEventListener("DOMContentLoaded", getData);
 
 
@@ -44,7 +44,7 @@ function getData(){
     console.log('urlParams', urlParams);
 
     const the_art_id = urlParams.get('art_id');
-    const link3 = "http://mymmd.dk/Kopenhagen/wp-json/wp/v2/art_calendar/"+the_art_id+"?per_page=100&_embed";
+    const link3 = "https://mymmd.dk/Kopenhagen/wp-json/wp/v2/art_calendar/"+the_art_id+"?per_page=100&_embed";
 //    console.log(the_art_id, "IdTest");
 
     if (the_art_id){
@@ -117,7 +117,7 @@ function ShowArtists(Names){
     li.textContent = Names;
     const firstLetter = Names.charAt(0);
 //    console.log(Names);
-    console.log(".getArtists ." + firstLetter)
+    console.log(".getArtists #" + firstLetter)
     const elem = document.querySelector(".getArtists #" + firstLetter);
     elem.appendChild(li);
 
