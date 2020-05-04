@@ -80,9 +80,8 @@ header .logo {
 }
 
 header > .logo-wrapper {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    margin-left: 2px;
+    margin-left: 7%;
+
 }
 
 /********Navigation ********/
@@ -108,9 +107,6 @@ header nav .active {
     font-weight: bold;
 
 }
-
-
-
 
 
 h1 {
@@ -200,7 +196,7 @@ rect:nth-child(3) {
 .search-box {
     position: absolute;
     top: 15px;
-    right: 180px;
+    right: 110px;
     padding: 5px;
     /*    margin: 7px;*/
     transform: translate(-50%, -50%) height: 25px;
@@ -267,12 +263,12 @@ header > .mainheader h1 {
     font-size: 3.8rem;
     width: 60%;
     height: auto;
-    margin-left: %;
+    margin-left:10%;
     margin-top: 20px;
     font-weight: 900;
     font-family: Arial, Helvetica, sans-serif;
     position: relative;
-    grid-column-start: 2;
+    grid-column-start: 1;
     grid-column-end: 7;
     grid-row-start: 1;
 
@@ -287,9 +283,9 @@ header > .mainheader h1 {
     position: relative;
 
     color: #D1A343;
-    margin-left: 5%;
+    margin-left: 10%;
     margin-top: 10%;
-    grid-column-start: 2;
+    grid-column-start: 1;
     grid-column-end: 7;
     grid-row-start: 5;
     grid-row-end: 8;
@@ -298,17 +294,14 @@ header > .mainheader h1 {
 .borderP {
     width: 80%;
     height: auto;
-
     position: relative;
-
-    margin-left: 15%;
-    margin-top: -10%;
+    margin-left: 10px;
     font-size: 1.4rem;
-    grid-column-start: 2;
-    grid-column-end: 6;
-    grid-row-start: 7;
-    grid-row-end: 10;
+    color: black;
+
 }
+
+
 
 button {
     background-color: #ADE5DF;
@@ -339,8 +332,10 @@ button {
     height: auto;
     width: 100%;
     grid-column-start: 5;
-    grid-column-end: -2;
-    grid-row-start: 1;
+    grid-column-end: -4;
+    grid-row-start: 0;
+    margin-top: -10%;
+    margin-left: 10%;
 
 
 
