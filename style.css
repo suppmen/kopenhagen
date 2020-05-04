@@ -44,6 +44,10 @@ body {
 
 }
 
+#hidden{
+    display: none;
+}
+
 header {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
