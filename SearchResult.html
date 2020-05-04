@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="">
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
+    <title>search</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="footer.css" />
 </head>
-<body id="singleArt">
+
+<body>
     <header>
         <div class="logo-wrapper">
             <a href="index.html">
@@ -29,7 +31,7 @@
 
 
 
-              <form class="search-box" action="SearchResult.html">
+            <form class="search-box" action="SearchResult.html">
 
                 <input class="search-txt" type="search" name="searchTerm" placeholder="Search here" />
 
@@ -51,7 +53,8 @@
             <a href="">join</a>
         </nav>
 
-         <article class="calendar-modal hide-calendar">
+
+        <article class="calendar-modal hide-calendar">
             <div class="exit">
 
                 <svg xmlns="http://www.w3.org/2000/svg" width="49.637" height="49.619" viewBox="0 0 49.637 49.619">
@@ -196,8 +199,6 @@
         </article>
 
 
-
-
         <section class="mainheader">
             <figure class="coverimg">
                 <img src="img/coverphoto.jpg" alt="cover photo" />
@@ -231,7 +232,7 @@
     </main>
 
     <template>
-        <article class="calendar-card">
+        <article id="delete-me" class="calendar-card">
             <div class="card-header">
                 <img src="" alt="" />
             </div>
@@ -244,30 +245,34 @@
                     Store Strandstræde 19, 5. tv., 1255 København K
                 </p>
             </div>
-           <div id="art-description">description</div>
+            <div class="arrow-button">
+                <a href="singleArt.html?art_id=">
+                    <img src="/media/arrow-1-02.svg" alt="arrow" />
+                </a>
+            </div>
         </article>
     </template>
-<footer class="footer">
-    <div class="footer-left">
-        <h2>Contact</h2>
-        <p>Tel:</p>
-        <p>Mail:</p>
-        <p>Adr:</p>
-    </div>
+    <footer class="footer">
+        <div class="footer-left">
+            <h2>Contact</h2>
+            <p>Tel:</p>
+            <p>Mail:</p>
+            <p>Adr:</p>
+        </div>
 
-    <div class="footer-center">
-    <h2>SoMe</h2>
-    <div class="so-me">
-    <img src="./icons/facebook-icon-01-01.png">
-    <img src="./icons/instagram-icon-02-02.png">
-    <img src="./icons/telephone-icon-03-03.png">
-    </div>
-    </div>
+        <div class="footer-center">
+            <h2>SoMe</h2>
+            <div class="so-me">
+                <img src="./icons/facebook-icon-01-01.png">
+                <img src="./icons/instagram-icon-02-02.png">
+                <img src="./icons/telephone-icon-03-03.png">
+            </div>
+        </div>
 
-    <div class="footer-right">
-    <h2>Join us</h2>
-    <p>© All rights reserved</p>
-    </div>
+        <div class="footer-right">
+            <h2>Join us</h2>
+            <p>© All rights reserved</p>
+        </div>
 
 
     </footer>

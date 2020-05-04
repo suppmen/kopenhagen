@@ -44,6 +44,10 @@ body {
 
 }
 
+#hidden{
+    display: none;
+}
+
 header {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -677,22 +681,14 @@ main .bottom-box > h2 {
 }
 
 
-/**** artists *****/
-
-.artistscoverimg img {
-    width: 100%;
-    left: 27%;
-}
-
-
-.mainartists .border {
+.mainartists .border-artistpage {
     width: 300px;
     height: 150px;
     border: 10px #d1a343 solid;
     border-right: none;
     position: absolute;
-    top: 120px;
-    left: 10%;
+    margin-left: 10%;
+    top: 290px;
 }
 
 .mainartists h1 {
@@ -701,9 +697,9 @@ main .bottom-box > h2 {
     width: 70%;
     height: auto;
     color: white;
-    margin-left: 13%;
     position: absolute;
-    top: 85px;
+    margin-left: 13%;
+    top: 250px;
 }
 
 h2.artiststitle {
@@ -762,6 +758,17 @@ main .arrow-button {
     top: -100px;
 }
 
+artist-cards{
+    position: absolute;
+}
+
+.card-container2 {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background-color: #e7f1f3;
+    margin: 5%;
+}
 
 /************* Artists Sorting ****************/
 .getArtists{
@@ -938,6 +945,13 @@ main .arrow-button {
         filter: brightness(0.4);
 
     }
+        .mainartists .border-artistpage {
+    top: 200px;
+}
+
+.mainartists h1 {
+    top: 150px;
+}
 
 }
 
@@ -1059,4 +1073,12 @@ main .arrow-button {
         grid-column-end: 12;
 
     }
+
+    .mainartists .border-artistpage {
+    top: 125px;
+}
+
+.mainartists h1 {
+    top: 90px;
+}
 }
