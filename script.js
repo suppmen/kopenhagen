@@ -49,14 +49,11 @@ window.addEventListener("DOMContentLoaded", getData(typeId, placeId));
 
 /***** fetch Data *****/
 
-<<<<<<< HEAD
 
 function getData(typeId, placeId){
 
-=======
 function getData(){
     //Artist Names Sorting
->>>>>>> Search
     fetch(link2)
     .then(function(response){
         return response.json();
@@ -79,14 +76,12 @@ function getData(){
             return response.json()
         })
         .then(showSingleArtPage)
-<<<<<<< HEAD
-    }else{
+    }else if{
      fetch("https://mymmd.dk/Kopenhagen/wp-json/wp/v2/art_calendar?_embed&place=" + placeId + "&calendar=" + typeId + "&per_page=100")
         .then(function (response) {
             return response.json();
         })
         .then(showData);
-=======
     }
 
     else if(search_term){
@@ -100,19 +95,16 @@ function getData(){
 
 
 
-
-
     else{
     fetch(link1)
     .then(function(response){
         return response.json();
     })
     .then(showArt_CalendarData);
->>>>>>> Search
 }
 }
 
-
+}
 
 
 
