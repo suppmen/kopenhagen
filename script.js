@@ -46,7 +46,8 @@ function getData(){
     const search_term = urlParams.get('searchTerm');
     const link3 = "https://mymmd.dk/Kopenhagen/wp-json/wp/v2/art_calendar/"+the_art_id+"?per_page=100&_embed";
     console.log(the_art_id, "IdTest");
-    const link4 = "https://mymmd.dk/Kopenhagen/wp-json/wp/v2/art_calendar?search=" +search_term+"&per_page=100&_embed"
+    const link4 = "https://mymmd.dk/Kopenhagen/wp-json/wp/v2/art_calendar?search=" +search_term+"&per_page=100&_embed";
+//    const link5 = "https://mymmd.dk/Kopenhagen/wp-json/wp/v2/taxonomies?search=" +search_term+"&per_page=100&_embed";
     console.log(search_term, "SearchTest");
     if (the_art_id){
         fetch(link3)
