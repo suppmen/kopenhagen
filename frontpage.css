@@ -304,18 +304,19 @@ header > .mainheader h1 {
 
 
 .calendar-btn  {
-    background-color: rgba(92, 79, 77, 0.7);
+    background-color: rgba(173, 229, 223, 0.7);
     height: 70px;
-    border-color:#D1A343;
-    border:0.4rem;
+    border:0.3rem;
     color: black;
-    padding: 20px 20px;
+    padding:0px;
+    padding-left: 10px;
+    padding-right: 10px;
     text-decoration: none;
     font-size: 30px;
     border-style: solid;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
-
+    vertical-align: middle;
     margin: 5px 5px;
 
     cursor: pointer;
@@ -331,6 +332,7 @@ header > .mainheader h1 {
 .calendar-btn:hover {
 /*     background-color: #D1A343;*/
     border-color: #D1A343;
+     background-color: rgba(92, 79, 77, 0.7);
 transition: all 0.3s ease 0s;}
 
 .coverimg {
@@ -405,14 +407,23 @@ main > .cards-wrapper .calendar-card .card-header img {
     height: auto;
 }
 
-main > .cards-wrapper .calendar-card .arrow-button img {
+/*
+main > .cards-wrapper .calendar-card .arrow-button{
     max-width: 60%;
     height: auto;
     margin-top: 20px;
 
 }
+*/
 
-
+.arrow-button a {
+    text-decoration: none;
+    color: black;
+}
+.arrow-button img {
+    z-index: 100;
+    max-width:200%;
+}
 
 /**** artists *****/
 
@@ -421,6 +432,8 @@ main > .cards-wrapper .calendar-card .arrow-button img {
     left: 27%;
 
 }
+
+
 
 main .bottom-box {
     border: 5px #d1a343 solid;
@@ -501,10 +514,12 @@ img.artist {
 }
 
 .arrow-button {
-    width: 40%;
+    width: 60%;
     height: auto;
     margin: 10%;
-    padding-top: 5%;
+/*    padding-top: 5%;*/
+    margin-bottom: 5%;
+
 
 }
 
