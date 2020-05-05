@@ -44,6 +44,12 @@ body {
 
 }
 
+#singleArt{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+
 #hidden{
     display: none;
 }

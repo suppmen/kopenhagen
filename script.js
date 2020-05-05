@@ -275,34 +275,40 @@ function ShowArtists(Names){
 
 
 function showSingleArtPage(art){
-        console.log(art, "art");
-        console.log(window.location);
+//        console.log(art, "art");
+//        console.log(window.location);
         const template = document.querySelector("template").content;
 
         const copy = template.cloneNode(true);
 
-        const divArtDescription = copy.querySelector('#art-description');
-        console.log(divArtDescription, "div");
+        const divSingleArtPage = copy.querySelector('#art-singlePage');
+
+
+//        const divArtDescription = copy.querySelector('#art-description');
+//        console.log(divArtDescription, "div");
 
 
 //    if(art.long_description.length> 1){
 //        divArtDescription.innerHTML = art.content.rendered;
-    if(divArtDescription){
-        divArtDescription.innerHTML = art.long_description;
+//    if(divArtDescription){
+    if(divSingleArtPage){
+//        divSingleArtPage.innerHTML = art.address;
 
-        copy.querySelector('.event-title').textContent = art.title.rendered;
-        copy.querySelector('.artCat').textContent = art._embedded["wp:term"][1][0].name;
-        copy.querySelector('.gallery-name').textContent = art.gallery_name;
-        copy.querySelector('.artist-name').textContent = art.artist_name;
+        copy.querySelector('.event-title1').textContent = art.title.rendered;
+//        copy.querySelector('.artCat').textContent = art._embedded["wp:term"][1][0].name;
+        copy.querySelector('.location').textContent = art.gallery_name;
+        copy.querySelector('.artist-name1').textContent = art.artist_name;
+        copy.querySelector('.date').textContent = art.artdate;
 //        copy.querySelector('.event-adress').textContent = art._embedded["wp:term"][3][0].name;
-        copy.querySelector('.event-adress').textContent = art.address;
-//        copy.querySelector('img').src = art._embedded["wp:featuredmedia"][0].source_url;
-        copy.querySelector("img").src = art._embedded["wp:featuredmedia"][0].media_details.sizes.medium.source_url;
-}
+        copy.querySelector('.address').textContent = art.address;
+        copy.querySelector('.pic').src = art._embedded["wp:featuredmedia"][0].source_url;
+//        copy.querySelector("img").src = art._embedded["wp:featuredmedia"][0].media_details.sizes.medium.source_url;
+        copy.querySelector('.description-artist').textContent = art.long_description;
+//}
 
 
-        document.querySelector(".cards-wrapper").appendChild(copy);
+        document.querySelector(".single-artist").appendChild(copy);
 
     };
 
-
+}
