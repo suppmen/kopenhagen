@@ -391,6 +391,8 @@ main > .cards-wrapper .calendar-card {
     background: #e7f1f3;
     /*    height: 300px;*/
     padding: 10px;
+    position: relative;
+    padding-bottom: 15%;
 }
 
 main > .cards-wrapper .calendar-card .card-details {
@@ -421,8 +423,12 @@ main > .cards-wrapper .calendar-card .arrow-button{
     color: black;
 }
 .arrow-button img {
+    width:70%;
+    position: absolute;
+    padding-left: 5%;
     z-index: 100;
-    max-width:200%;
+    bottom: 2px;
+
 }
 
 /**** artists *****/
@@ -516,10 +522,10 @@ img.artist {
 .arrow-button {
     width: 60%;
     height: auto;
-    margin: 10%;
-/*    padding-top: 5%;*/
-    margin-bottom: 5%;
-
+    position: absolute;
+    padding: 2%;
+    right: -10px;
+    bottom: 2px;
 
 }
 
