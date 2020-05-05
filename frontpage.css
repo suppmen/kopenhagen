@@ -690,11 +690,11 @@ img.artist {
     }
 
     .border {
-        margin-top: 20px;
+        margin-top: 15%;
         margin-left: 0;
         height: 140px;
         grid-column-start: 5;
-        grid-column-end: 10;
+        grid-column-end: 11;
         grid-row-start: 4;
         grid-row-end: 8;
         width: 100%;
@@ -703,22 +703,16 @@ img.artist {
     .borderP {
         width: 100%;
 
-        margin-left: 20px;
-        margin-top: 10px;
-        font-size: 1.2rem;
+        margin-left:5%;
+        margin-top: 5%;
+        font-size: 1.4rem;
         grid-column-start: 5;
         grid-column-end: 10;
     }
 
-    button {
+    .calendar-btn{
 
-
-        margin-right: 0;
-
-
-        grid-column-start: 5;
-        grid-row-start: 8;
-
+     grid-row-start: 9;
     }
 
     .coverimg {
@@ -742,7 +736,6 @@ img.artist {
         margin: 0;
         padding: 0;
     }
-
 
 
 
@@ -787,30 +780,33 @@ img.artist {
     .borderP {
         width: 100%;
 
-        margin-left: 20px;
+        margin-left:5%;
         /*    margin-top: -10px;*/
         font-size: 1.2rem;
         grid-column-start: 4;
         grid-column-end: 10;
-        grid-row-start: 7;
+        margin-top:15%;
     }
 
-    button {
-
-
-        margin-right: 0;
+    .calendar-btn {
 
 
         grid-column-start: 5;
-        grid-row-start: 8;
+        grid-row-start:9;
 
     }
+
+    .border{background-color: rgba(225, 225, 225, 0.5);
+
+    margin-top:12%}
+
 
     .coverimg {
         display: none;
 
 
     }
+
 
     header > .navigation-bar {
         position: fixed;
@@ -837,9 +833,15 @@ img.artist {
 
     header .logo {
 
-        width: 100vw;
-        height: 300px;
+
+        width: 94vw;
+        grid-column-start: 1;
+        grid-column-end: 12;
+
+
+  /*      height: 300px;
         margin: 0px;
+*/
     }
 
     header > .logo-wrapper {
@@ -847,4 +849,7 @@ img.artist {
         grid-column-end: 12;
 
     }
+
+    c
+
 }
