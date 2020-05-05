@@ -50,49 +50,44 @@ window.addEventListener("DOMContentLoaded", getData(typeId, placeId));
 /***** fetch Data *****/
 
 
-function getData(typeId, placeId){
+function getData(typeId, placeId) {
 
     //Artist Names Sorting
     fetch(link2)
-    .then(function(response){
-        return response.json();
-    })
-    .then(showArtistsArray);
-
-    const urlParams = new URLSearchParams(window.location.search);
-//    console.log('URLSearchParams' + window.location);
-//    console.log('urlParams', urlParams);
-    const the_art_id = urlParams.get('art_id');
-    const search_term = urlParams.get('searchTerm');
-    const link3 = "https://mymmd.dk/Kopenhagen/wp-json/wp/v2/art_calendar/"+the_art_id+"?per_page=100&_embed";
-    console.log(the_art_id, "IdTest");
-    const link4 = "https://mymmd.dk/Kopenhagen/wp-json/wp/v2/art_calendar?search=" +search_term+"&per_page=100&_embed";
-    const link5 = "https://mymmd.dk/Kopenhagen/wp-json/wp/v2/art_calendar?_embed&place=" + placeId + "&calendar=" + typeId + "&per_page=100"
-//    const link6 = "https://mymmd.dk/Kopenhagen/wp-json/wp/v2/taxonomies?search=" +search_term+"&per_page=100&_embed";
-//    console.log(search_term, "SearchTest");
-    if (the_art_id){
-        fetch(link3)
-        .then(function(response){
-            return response.json()
-        })
-        .then(showSingleArtPage)
-    }
-
-
-    else if(search_term){
-        fetch(link4)
-        .then(function(response){
-            return response.json()
-        })
-        .then(showData)
-    }
-
-     else{
-     fetch(link5)
         .then(function (response) {
             return response.json();
         })
-        .then(showData);
+        .then(showArtistsArray);
+
+    const urlParams = new URLSearchParams(window.location.search);
+    //    console.log('URLSearchParams' + window.location);
+    //    console.log('urlParams', urlParams);
+    const the_art_id = urlParams.get('art_id');
+    const search_term = urlParams.get('searchTerm');
+    const link3 = "https://mymmd.dk/Kopenhagen/wp-json/wp/v2/art_calendar/" + the_art_id + "?per_page=100&_embed";
+    console.log(the_art_id, "IdTest");
+    const link4 = "https://mymmd.dk/Kopenhagen/wp-json/wp/v2/art_calendar?search=" + search_term + "&per_page=100&_embed";
+    const link5 = "https://mymmd.dk/Kopenhagen/wp-json/wp/v2/art_calendar?_embed&place=" + placeId + "&calendar=" + typeId + "&per_page=100"
+    //    const link6 = "https://mymmd.dk/Kopenhagen/wp-json/wp/v2/taxonomies?search=" +search_term+"&per_page=100&_embed";
+    //    console.log(search_term, "SearchTest");
+    if (the_art_id) {
+        fetch(link3)
+            .then(function (response) {
+                return response.json()
+            })
+            .then(showSingleArtPage)
+    } else if (search_term) {
+        fetch(link4)
+            .then(function (response) {
+                return response.json()
+            })
+            .then(showData)
+    } else {
+        fetch(link5)
+            .then(function (response) {
+                return response.json();
+            })
+            .then(showData);
     }
 }
 
@@ -205,10 +200,10 @@ function showData(artArray) {
     console.log(artArray, "artArray");
     const parent = document.querySelector(".cards-wrapper");
 
-    if (parent.childNodes.length > 1){
+    if (parent.childNodes.length > 1) {
         while (parent.firstChild) {
-        parent.removeChild(parent.firstChild);
-    }
+            parent.removeChild(parent.firstChild);
+        }
     }
 
     artArray.forEach(art => {
@@ -224,13 +219,13 @@ function showData(artArray) {
         copy.querySelector('.artist-name').textContent = art.artist_name;
         //        copy.querySelector('.event-adress').textContent = art._embedded["wp:term"][3][0].name;
         copy.querySelector('.event-adress').textContent = art.address;
-//        copy.querySelector('img').src = art._embedded["wp:featuredmedia"][0].source_url;
+        //        copy.querySelector('img').src = art._embedded["wp:featuredmedia"][0].source_url;
         copy.querySelector("img").src = art._embedded["wp:featuredmedia"][0].media_details.sizes.medium.source_url;
 
         const a = copy.querySelector('a');
 
-        if (a){
-                    a.href += art.id;
+        if (a) {
+            a.href += art.id;
 
         }
 
@@ -244,24 +239,24 @@ function showData(artArray) {
 }
 
 
-function showArtistsArray(artists){
+function showArtistsArray(artists) {
     let artistNames = [];
 
-  artists.forEach(Artist =>{
-//      console.log(Artist.name);
-      artistNames.push(Artist.name);
-//      console.log(artistNames);
-  });
+    artists.forEach(Artist => {
+        //      console.log(Artist.name);
+        artistNames.push(Artist.name);
+        //      console.log(artistNames);
+    });
     artistNames.sort();
-//    console.log(artistNames);
+    //    console.log(artistNames);
     artistNames.forEach(ShowArtists);
 }
 
-function ShowArtists(Names){
+function ShowArtists(Names) {
     const li = document.createElement("li");
     li.textContent = Names;
     const firstLetter = Names.charAt(0);
-//    console.log(Names);
+    //    console.log(Names);
     console.log(".getArtists #" + firstLetter)
     const elem = document.querySelector(".getArtists #" + firstLetter);
     elem.appendChild(li);
@@ -274,37 +269,37 @@ function ShowArtists(Names){
 }
 
 
-function showSingleArtPage(art){
-//        console.log(art, "art");
-//        console.log(window.location);
-        const template = document.querySelector("template").content;
+function showSingleArtPage(art) {
+    //        console.log(art, "art");
+    //        console.log(window.location);
+    const template = document.querySelector("template").content;
 
-        const copy = template.cloneNode(true);
+    const copy = template.cloneNode(true);
 
-        const divSingleArtPage = copy.querySelector('#art-singlePage');
-
-
-//        const divArtDescription = copy.querySelector('#art-description');
-//        console.log(divArtDescription, "div");
+    const divSingleArtPage = copy.querySelector('#art-singlePage');
 
 
-//    if(art.long_description.length> 1){
-//        divArtDescription.innerHTML = art.content.rendered;
-//    if(divArtDescription){
-    if(divSingleArtPage){
-//        divSingleArtPage.innerHTML = art.address;
+    //        const divArtDescription = copy.querySelector('#art-description');
+    //        console.log(divArtDescription, "div");
+
+
+    //    if(art.long_description.length> 1){
+    //        divArtDescription.innerHTML = art.content.rendered;
+    //    if(divArtDescription){
+    if (divSingleArtPage) {
+        //        divSingleArtPage.innerHTML = art.address;
 
         copy.querySelector('.event-title1').textContent = art.title.rendered;
-//        copy.querySelector('.artCat').textContent = art._embedded["wp:term"][1][0].name;
+        //        copy.querySelector('.artCat').textContent = art._embedded["wp:term"][1][0].name;
         copy.querySelector('.location').textContent = art.gallery_name;
         copy.querySelector('.artist-name1').textContent = art.artist_name;
         copy.querySelector('.date').textContent = art.artdate;
-//        copy.querySelector('.event-adress').textContent = art._embedded["wp:term"][3][0].name;
+        //        copy.querySelector('.event-adress').textContent = art._embedded["wp:term"][3][0].name;
         copy.querySelector('.address').textContent = art.address;
         copy.querySelector('.pic').src = art._embedded["wp:featuredmedia"][0].source_url;
-//        copy.querySelector("img").src = art._embedded["wp:featuredmedia"][0].media_details.sizes.medium.source_url;
+        //        copy.querySelector("img").src = art._embedded["wp:featuredmedia"][0].media_details.sizes.medium.source_url;
         copy.querySelector('.description-artist').textContent = art.long_description;
-//}
+        //}
 
 
         document.querySelector(".single-artist").appendChild(copy);
