@@ -1,3 +1,181 @@
+header {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 100px auto;
+
+}
+
+
+
+header > .navigation-bar {
+    grid-column: 12/-1;
+    width: 100%;
+    z-index: 120;
+    display: flex;
+    background: none;
+
+}
+
+header > .navigation-bar .burger {
+
+    width: 35px;
+    z-index: 130;
+    margin-top: 15px;
+    cursor: pointer;
+
+}
+
+header .logo {
+    background-image: url(LogoImage/KopenhagenArt_logo-01.svg);
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 220px;
+    margin: 0px;
+}
+
+header > .logo-wrapper {
+    margin-left: 7%;
+
+}
+
+/********Navigation ********/
+header nav a {
+    font-size: 2rem;
+    text-transform: uppercase;
+    display: block;
+    text-decoration: none;
+    color: black;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 3rem;
+    transition: color 0.2s 0.1s;
+    z-index: 100;
+
+}
+
+header nav a:hover {
+    color: gray;
+}
+
+header nav .active {
+    font-weight: bold;
+
+}
+
+header nav {
+    position: absolute;
+    right: -140vw;
+    z-index: 100;
+display: none;
+    background: white;
+    width: 100vw;
+    height: 100vh;
+    padding: 4rem;
+
+    transition: transform 1s;
+
+}
+
+header nav.open {
+        display: flex;
+
+    transform: translateX(-140vw);
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+    position: fixed;
+}
+
+/********** Burger *********/
+
+svg rect {
+    transition: all 0.2s;
+    transform-origin: 50% 50%;
+}
+
+.open rect:nth-child(2),
+.open rect:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+header rect:nth-child(2),
+rect:nth-child(3) {
+    transition-delay: 0s;
+}
+
+
+.open rect:first-child {
+    transform: translateY(30px);
+    opacity: 0;
+}
+
+.open rect:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+.open rect:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+.open rect:last-child {
+    transform: translateY(-30px);
+    opacity: 0;
+}
+
+
+
+
+/************ search bar ************/
+
+.search-box {
+    position: absolute;
+    top: 15px;
+    right: 110px;
+    padding: 5px;
+    /*    margin: 7px;*/
+    transform: translate(-50%, -50%) height: 25px;
+    border-radius: 25px;
+    background: darkgray;
+}
+
+.search-box:hover > .search-txt {
+    width: 140px;
+    padding: 6px 6px;
+}
+
+.search-box:hover > .search-btn {
+    background: black;
+}
+
+.search-btn {
+    color: white;
+    float: right;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.search-txt {
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: white;
+    font-size: 10px;
+    line-height: 20px;
+    width: 0px;
+    transition: 0.4s;
+
+}
+
+
+
 /******* single artist *******/
 /***** section1 *****/
 .single-short-info {
@@ -13,10 +191,11 @@
 }
 
 .border-single-artist {
-    width: 20%;
-    height: 150px;
+    width: 100%;
+    height: 200px;
+    max-width: 300px;
     border: 10px solid #D1A343;
-    border-right: none ;
+    border-right: none;
     position: relative;
     left: 30%;
 }
@@ -24,44 +203,54 @@
 
 .single-short-info h1 {
     position: relative;
-    font-size: 80px;
+    width: 100%;
+    height: auto;
+    max-width: 900px;
+    font-size: 65px;
     margin-left: 35%;
     top: -170px;
 }
 
 .single-short-info h2 {
     position: relative;
-    font-size: 50px;
+    width: 100%;
+    height: auto;
+    max-width: 900px;
+    font-size: 40px;
     margin-left: 35%;
-    top: -190px;
+    top: -150px;
 }
 
 .single-short-info .date {
     position: relative;
-    font-size: 25px;
+    font-size: 20px;
     margin-left: 35%;
-    top: -230px;
+    top: -170px;
 }
 
-.single-short-info > p  {
+.single-short-info > p {
     position: relative;
+    font-size: 20px;
     margin-left: 35%;
-    top: -200px;
+    top: -150px;
 }
 
 /***** section2 *****/
 .description-artist {
     background-color: #E7F1F3;
-    width: 50%;
+    width: 70%;
     height: auto;
-/*     position: relative;
-     */    margin-left: 3%;
+    /*     position: relative;
+     */
+    margin-left: 3%;
     padding: 2%
 }
-.description-artist p{
+
+.description-artist {
     font-size: 20px;
-/*     position: relative;
-     */}
+    /*     position: relative;
+     */
+}
 
 .description-artist img {
     width: 100%;
@@ -83,3 +272,451 @@
     bottom: -20px;
     right: 270px;
 }
+
+@media screen and (max-width: 800px) {
+
+
+
+    /* body {
+        overflow-x: hidden;
+        grid-template-areas:
+            "header header header header header header"
+            ". main main main main ."
+            ". footer footer footer footer .";
+
+        margin: 0;
+        padding: 0;
+    }
+    ****** single artist ******
+    **** section1 **** */
+
+    .single-short-info img {
+        width: 100%;
+        height: auto;
+        max-height: 500px;
+        position: absolute;
+        margin: 0;
+    }
+
+    .border-single-artist {
+        width: 100%;
+        height: 250px;
+        border: 10px solid #D1A343;
+        border-right: none;
+        position: relative;
+        left: 10%;
+        top: 100px;
+    }
+
+
+    .single-short-info h1 {
+        position: relative;
+        width: 100%;
+        height: auto;
+        max-width: 500px;
+        color: white;
+        font-size: 60px;
+        margin-left: 25%;
+        top: -120px;
+    }
+
+    .single-short-info h2 {
+        position: relative;
+        width: 100%;
+        height: auto;
+        max-width: 800px;
+        font-size: 40px;
+        margin-left: 10%;
+        top: 170px;
+    }
+
+    .single-short-info .date {
+        position: relative;
+        width: 100%;
+        height: auto;
+        max-width: 500px;
+        font-size: 20px;
+        margin: 3% 10%;
+        top: 170px;
+    }
+
+    .single-short-info > p {
+        position: relative;
+        width: 100%;
+        height: auto;
+        max-width: 600px;
+        margin: 2% 10%;
+        top: 200px;
+    }
+
+
+    /*     **** section2 ****
+     */
+
+    .description-artist {
+        background-color: #E7F1F3;
+        width: 90%;
+        height: auto;
+        position: relative;
+        margin: 10% 5%;
+        padding: 5%;
+        top: 360px;
+    }
+
+    .description-artist {
+        font-size: 20px;
+    }
+
+    .description-artist img {
+        width: 100%;
+        height: auto;
+    }
+
+    .bottom-border-box {
+        border: 5px #d1a343 solid;
+        border-top: none;
+        position: relative;
+        height: 100px;
+        margin: 1%;
+        top: 200px
+    }
+
+    .bottom-border-box h2 {
+        position: absolute;
+        bottom: -20px;
+        right: 20px;
+    }
+
+    footer.footer {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        top: 250px;
+
+    }
+}
+
+
+
+
+@media screen and (max-width: 500px) {
+
+/*     .wrapper-singlepage {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+    }
+     */
+
+
+    /* body {
+        overflow-x: hidden;
+        grid-template-areas:
+            "header header header header header header"
+            ". main main main main ."
+            ". footer footer footer footer .";
+
+        margin: 0;
+        padding: 0;
+    }
+    ****** single artist ******
+    **** section1 **** */
+
+    .single-short-info img {
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+        position: absolute;
+        margin: 0;
+
+    }
+
+    .border-single-artist {
+        width: 100%;
+        height: 200px;
+        border: 10px solid #D1A343;
+        border-right: none;
+        position: relative;
+        left: 10%;
+        top: 20px;
+    }
+
+
+    .single-short-info h1 {
+        position: relative;
+        width: 100%;
+        height: auto;
+        max-width: 300px;
+        color: white;
+        font-size: 50px;
+        margin-left: 35%;
+        top: -190px;
+    }
+
+    .single-short-info h2 {
+        position: relative;
+        width: 100%;
+        height: auto;
+        max-width: 400px;
+        font-size: 50px;
+        margin-left: 10%;
+        top: -20px;
+    }
+
+    .single-short-info .date {
+        position: relative;
+        font-size: 20px;
+        margin: 3% 10%;
+        top: -50px;
+    }
+
+    .single-short-info > p {
+        position: relative;
+        font-size: 16px;
+        width: 300px;
+        margin: 5% 10%;
+        top: -40px;
+    }
+
+
+    /*     **** section2 ****
+     */
+
+    .description-artist {
+        background-color: #E7F1F3;
+        width: 90%;
+        height: auto;
+        position: relative;
+        margin: 5%;
+        padding: 5%;
+        top: 250px;
+    }
+
+    .description-artist {
+        font-size: 16px;
+
+    }
+
+    .description-artist img {
+        width: 100%;
+        height: auto;
+    }
+
+    .bottom-border-box {
+        border: 5px #d1a343 solid;
+        border-top: none;
+        position: relative;
+        height: 100px;
+        margin: 1%;
+        top: 150px
+    }
+
+    .bottom-border-box h2 {
+        position: absolute;
+        bottom: -20px;
+        right: 20px;
+    }
+
+    footer.footer {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        top: 250px;
+
+    }
+
+    header > .navigation-bar {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        z-index: 120;
+        width: 100%;
+        cursor: pointer;
+        display: flex;
+        background: white;
+        height: 60px;
+        justify-content: flex-end;
+        height:
+    }
+
+    header > .navigation-bar .burger {
+        margin-right: 10px;
+    }
+
+    .search-box {
+        top: 15px;
+        right: 80px;
+    }
+
+    header .logo {
+
+
+        width: 85vw;
+        grid-column-start: 1;
+        grid-column-end: 12;
+    }
+
+    header > .logo-wrapper {
+        grid-column-start: 1;
+        grid-column-end: 12;
+
+    }
+}
+
+/*
+@media screen and (max-width: 1000px) {
+
+    header .mainheader {
+
+
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(10, 8vh);
+
+
+    }
+
+
+
+    header > .mainheader h1 {
+        font-size: 3.2rem;
+        width: 60%;
+        margin-left: 0;
+        grid-column-start: 1;
+        grid-column-end: 7;
+        grid-row-start: 1;
+
+    }
+
+    .border {
+
+        margin-left: 0;
+
+        grid-column-start: 1;
+        grid-column-end: 8;
+        grid-row-start: 5;
+        grid-row-end: 8;
+    }
+
+    .borderP {
+        width: 70%;
+
+        margin-left: 20px;
+        margin-top: 50px;
+        font-size: 1.2rem;
+        grid-column-start: 1;
+        grid-column-end: 7;
+    }
+
+    button {
+
+
+        margin-right: 0;
+
+
+        grid-column-start: 10;
+
+    }
+
+    .search-box {
+
+        right: 120px;
+
+    }
+
+
+}
+
+
+@media screen and (max-width: 800px) {
+
+
+    body {
+
+        margin: 0;
+        padding: 0;
+    }
+
+    .search-box {
+
+        right: 100px;
+
+    }
+
+
+    header {
+        background-image: url("img/coverphoto.jpg");
+        background-size: cover;
+    }
+
+    header .mainheader {
+
+
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(10, 8vh);
+
+
+    }
+
+
+
+    header > .mainheader h1 {
+        font-size: 3rem;
+        width: 100%;
+        margin-left: 0;
+        grid-column-start: 5;
+        grid-row-start: 1;
+
+    }
+
+    .border {
+        margin-top: 15%;
+        margin-left: 0;
+        height: 140px;
+        grid-column-start: 5;
+        grid-column-end: 11;
+        grid-row-start: 4;
+        grid-row-end: 8;
+        width: 100%;
+    }
+
+    .borderP {
+        width: 100%;
+
+        margin-left:5%;
+        margin-top: 5%;
+        font-size: 1.4rem;
+        grid-column-start: 5;
+        grid-column-end: 10;
+    }
+
+    .calendar-btn{
+
+     grid-row-start: 9;
+    }
+
+    .coverimg {
+        display: none;
+        filter: brightness(0.4);
+
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+
+
+    body {
+        overflow-x: hidden;
+        grid-template-areas:
+            "header header header header header header"
+            ". main main main main ."
+            ". footer footer footer footer .";
+
+        margin: 0;
+        padding: 0;
+    }
+
+
+
+}
+*/

@@ -24,7 +24,7 @@ body {
 
 
 
-  /* display: grid;
+    /* display: grid;
 
 /*
     /*
@@ -44,14 +44,22 @@ body {
 
 }
 
-#hidden{
+#singleArt {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+
+#hidden {
     display: none;
 }
 
+/*
 header {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 100px auto;
+
 }
 
 
@@ -62,14 +70,16 @@ header > .navigation-bar {
     z-index: 130;
     display: flex;
     background: none;
+
 }
 
 header > .navigation-bar .burger {
-position: absolute;
+    position: absolute;
     width: 35px;
     z-index: 130;
     margin-top: 15px;
     cursor: pointer;
+
 }
 
 
@@ -82,12 +92,12 @@ header .logo {
 }
 
 header > .logo-wrapper {
-    grid-column-start: 1;
+    grid-column-start: 2;
     grid-column-end: 3;
-
+    margin-left: 2px;
 }
 
-/********Navigation ********/
+*******Navigation *******
 header nav a {
     font-size: 2rem;
     text-transform: uppercase;
@@ -112,6 +122,7 @@ header nav .active {
 }
 
 
+*/
 
 
 
@@ -123,6 +134,7 @@ h1 {
     display: grid;
 }
 
+/*
 .border {
     width: 100%;
     height: 100px;
@@ -133,12 +145,14 @@ h1 {
     color: #D1A343;
 }
 
+*/
 
+/*
 header nav {
     position: absolute;
     right: -140vw;
     z-index: 120;
-display: none;
+    display: none;
     background: white;
     width: 100vw;
     height: 100vh;
@@ -147,9 +161,11 @@ display: none;
     transition: transform 1s;
 
 }
+*/
 
+/*
 header nav.open {
-        display: flex;
+    display: flex;
 
     transform: translateX(-140vw);
     justify-content: center;
@@ -157,8 +173,10 @@ header nav.open {
     align-items: center;
     position: fixed;
 }
+*/
 
-/********** Burger *********/
+/*
+********* Burger ********
 
 svg rect {
     transition: all 0.2s;
@@ -194,17 +212,19 @@ rect:nth-child(3) {
     opacity: 0;
 }
 
+*/
 
 
 
 /************ search bar ************/
 
+/*
 .search-box {
     position: absolute;
     top: 15px;
     right: 180px;
     padding: 5px;
-    /*    margin: 7px;*/
+        margin: 7px;
     transform: translate(-50%, -50%) height: 25px;
     border-radius: 25px;
     background: darkgray;
@@ -220,19 +240,10 @@ rect:nth-child(3) {
     background: black;
 }
 
-.search-btn {
-    color: white;
-    float: right;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background: gray;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/
+*/
 
-}
-
+/*
 .search-txt {
     border: none;
     background: none;
@@ -246,6 +257,7 @@ rect:nth-child(3) {
     transition: 0.4s;
 
 }
+*/
 
 
 
@@ -253,8 +265,9 @@ rect:nth-child(3) {
 
 /********** cover Image and text in header ************/
 
+/*
 header .mainheader {
-    /* padding: 0 100px; */
+     padding: 0 100px;
 
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(10, 8vh);
@@ -264,13 +277,15 @@ header .mainheader {
     grid-column-end: -1;
 }
 
+*/
 
 
+/*
 header > .mainheader h1 {
     font-size: 3.8rem;
     width: 60%;
     height: auto;
-    margin-left: 50px;
+    margin-left: %;
     margin-top: 20px;
     font-weight: 900;
     font-family: Arial, Helvetica, sans-serif;
@@ -280,7 +295,9 @@ header > .mainheader h1 {
     grid-row-start: 1;
 
 }
+*/
 
+/*
 .border {
     width: 100%;
     height: 150px;
@@ -290,8 +307,8 @@ header > .mainheader h1 {
     position: relative;
 
     color: #D1A343;
-    margin-left: 50px;
-
+    margin-left: 5%;
+    margin-top: 10%;
     grid-column-start: 2;
     grid-column-end: 7;
     grid-row-start: 5;
@@ -303,17 +320,19 @@ header > .mainheader h1 {
     height: auto;
 
     position: relative;
-    top: -115px;
-    margin-left: 70px;
-    margin-top: 50px;
+
+    margin-left: 15%;
+    margin-top: -10%;
     font-size: 1.4rem;
     grid-column-start: 2;
     grid-column-end: 6;
     grid-row-start: 7;
     grid-row-end: 10;
 }
+*/
 
- .calendar-btn{
+/*
+.calendar-btn {
     background-color: #ADE5DF;
     height: 70px;
     border-radius: 3rem;
@@ -324,7 +343,7 @@ header > .mainheader h1 {
     border-style: none;
 
     margin: 5px 5px;
-  cursor: pointer;
+    cursor: pointer;
 
 
 
@@ -334,8 +353,9 @@ header > .mainheader h1 {
 
     grid-column-start: 9;
     grid-row-start: 5;
-    /*    grid-row-end: ;*/
+        grid-row-end: ;
 }
+*/
 
 /* calendar modal */
 
@@ -349,23 +369,24 @@ header > .mainheader h1 {
     height: 100%;
     background-color: #e7f1f3;
     display: flex;
-/*    justify-content: space-around;*/
+    /*    justify-content: space-around;*/
     justify-content: center;
     padding: 50px;
     align-items: center;
     flex-wrap: wrap;
     overflow-y: scroll;
 }
+
 .calendar-modal section {
- margin: 50px;
+    margin: 50px;
 }
 
 
-.hide-calendar{
+.hide-calendar {
     display: none;
 }
 
-header .calendar-modal  .exit {
+header .calendar-modal .exit {
     position: absolute;
     top: 20px;
     right: 50px;
@@ -373,32 +394,39 @@ header .calendar-modal  .exit {
     width: 35px;
     cursor: pointer;
 }
-header .calendar-modal  .exit  svg{
+
+header .calendar-modal .exit svg {
 
     height: 35px;
     width: 35px;
 }
-header .filter{
+
+header .filter {
     display: flex;
     flex-wrap: wrap;
 }
-header .filter .type-btn-wrapper{
+
+header .filter .type-btn-wrapper {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-/*    align-items: flex-start;*/
+    /*    align-items: flex-start;*/
 }
-header .filter .type,.place{
+
+header .filter .type,
+.place {
     text-align: center;
 }
-header .filter .place{
-   margin-left: 20px;
+
+header .filter .place {
+    margin-left: 20px;
 }
-.filter-btn{
-/*      background-color: #ADE5DF;*/
+
+.filter-btn {
+    /*      background-color: #ADE5DF;*/
     height: 50px;
     border-radius: 3rem;
-/*    color: white;*/
+    /*    color: white;*/
     color: #b7b7b7;
     background: white;
     padding: 0px 20px;
@@ -407,13 +435,15 @@ header .filter .place{
     border-style: none;
 
     margin: 5px 5px;
-  cursor: pointer;
+    cursor: pointer;
 
 }
-.filter-btn:hover{
-      background-color: #ADE5DF;
+
+.filter-btn:hover {
+    background-color: #ADE5DF;
     color: white;
 }
+
 /*
 .unchosen:hover{
         background-color: #ADE5DF;
@@ -427,53 +457,53 @@ header .filter .place{
 
 
 
-.calendar-wrapper{
-      max-width: max-content;
-/*  background-color: #fff;*/
-/*  border: 2px solid var(--blue-grey-200);*/
-/*  border-radius: 8px;*/
+.calendar-wrapper {
+    max-width: max-content;
+    /*  background-color: #fff;*/
+    /*  border: 2px solid var(--blue-grey-200);*/
+    /*  border-radius: 8px;*/
 }
 
 .month-indicator {
-  color: var(--blue-grey-700);
-  text-align: center;
-  font-weight: 500;
+    color: var(--blue-grey-700);
+    text-align: center;
+    font-weight: 500;
     font-size: 1.5rem;
 }
 
 .date-grid button {
-  position: relative;
-  border: 0;
-  width: 7ch;
-  height: 7ch;
-  border-radius: 50%;
-  background-color: transparent;
-  color: var(--blue-grey-600);
+    position: relative;
+    border: 0;
+    width: 7ch;
+    height: 7ch;
+    border-radius: 50%;
+    background-color: transparent;
+    color: var(--blue-grey-600);
 }
 
 
 :root {
-  --teal-050: #effcf6;
-  --teal-100: #c6f7e2;
-  --teal-200: #8eedc7;
-  --teal-300: #65d6ad;
-  --teal-400: #3ebd93;
-  --teal-500: #27ab83;
-  --teal-600: #199473;
-  --teal-700: #147d64;
-  --teal-800: #0c6b58;
-  --teal-900: #014d40;
+    --teal-050: #effcf6;
+    --teal-100: #c6f7e2;
+    --teal-200: #8eedc7;
+    --teal-300: #65d6ad;
+    --teal-400: #3ebd93;
+    --teal-500: #27ab83;
+    --teal-600: #199473;
+    --teal-700: #147d64;
+    --teal-800: #0c6b58;
+    --teal-900: #014d40;
 
-  --blue-grey-050: #f0f4f8;
-  --blue-grey-100: #d9e2ec;
-  --blue-grey-200: #bcccdc;
-  --blue-grey-300: #9fb3c8;
-  --blue-grey-400: #829ab1;
-  --blue-grey-500: #627d98;
-  --blue-grey-600: #486581;
-  --blue-grey-700: #334e68;
-  --blue-grey-800: #243b53;
-  --blue-grey-900: #102a43;
+    --blue-grey-050: #f0f4f8;
+    --blue-grey-100: #d9e2ec;
+    --blue-grey-200: #bcccdc;
+    --blue-grey-300: #9fb3c8;
+    --blue-grey-400: #829ab1;
+    --blue-grey-500: #627d98;
+    --blue-grey-600: #486581;
+    --blue-grey-700: #334e68;
+    --blue-grey-800: #243b53;
+    --blue-grey-900: #102a43;
 }
 
 
@@ -483,74 +513,76 @@ header .filter .place{
 
 
 .month-indicator {
-  color: var(--blue-grey-700);
-  text-align: center;
-  font-weight: 500;
+    color: var(--blue-grey-700);
+    text-align: center;
+    font-weight: 500;
     font-size: 1.5rem;
 }
 
 
 .day-of-week,
 .date-grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
 }
 
 .day-of-week {
-  margin-top: 1.25em;
+    margin-top: 1.25em;
 }
 
 .day-of-week > * {
-  font-size: 0.9em;
-  color: var(--blue-grey-400);
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  font-variant: small-caps;
-  text-align: center;
+    font-size: 0.9em;
+    color: var(--blue-grey-400);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    font-variant: small-caps;
+    text-align: center;
 }
 
 /* Dates */
 .date-grid {
-  margin-top: 0.5em;
+    margin-top: 0.5em;
 }
 
 /* Positioning the first day */
 .date-grid button:first-child {
-  grid-column: 6;
+    grid-column: 6;
 }
 
 
 .date-grid button {
-  position: relative;
-  border: 0;
-  width: 7ch;
-  height: 7ch;
-  border-radius: 50%;
-  background-color: transparent;
-  color: var(--blue-grey-600);
+    position: relative;
+    border: 0;
+    width: 7ch;
+    height: 7ch;
+    border-radius: 50%;
+    background-color: transparent;
+    color: var(--blue-grey-600);
 }
 
 .date-grid button:hover,
 .date-grid button:focus {
-  outline: none;
-  background-color: var(--blue-grey-050);
-  color: var(--blue-grey-700);
+    outline: none;
+    background-color: var(--blue-grey-050);
+    color: var(--blue-grey-700);
 }
 
 .date-grid button:active,
 .date-grid button.is-selected {
-  background-color: var(--teal-100);
-  color: var(--teal-900);
+    background-color: var(--teal-100);
+    color: var(--teal-900);
 }
 
+/*
 .coverimg {
     height: auto;
     width: 100%;
-    grid-column-start: 6;
-    grid-column-end: -1;
+    grid-column-start: 5;
+    grid-column-end: -2;
     grid-row-start: 1;
 
-    height: 900px;
+
+
 
 }
 
@@ -559,30 +591,33 @@ header .filter .place{
     height: auto;
 }
 
+*/
 
 /*calendar submit*/
 
-header .arrow-button  img{
+header .arrow-button img {
     width: 100px;
     height: auto;
 
 }
 
-header .go-arrow-wrapper{
+header .go-arrow-wrapper {
 
- align-self: center;
+    align-self: center;
 }
-header .arrow-button  {
-   display: flex;
+
+header .arrow-button {
+    display: flex;
     align-items: center;
-        justify-content: center;
-        height: 100%;
+    justify-content: center;
+    height: 100%;
 
 
 
 }
-header .arrow-button  a{
-color: black;
+
+header .arrow-button a {
+    color: black;
     text-decoration: none;
     margin-right: 10px;
 }
@@ -590,6 +625,7 @@ color: black;
 
 /******* main ********/
 
+/*
 main {
     display: flex;
     flex-direction: column;
@@ -621,10 +657,12 @@ main > .cards-wrapper {
     position: relative;
     z-index: 10;
 }
+*/
 
+/*
 main > .cards-wrapper .calendar-card {
     background: #e7f1f3;
-    /*    height: 300px;*/
+        height: 300px;
     padding: 10px;
 }
 
@@ -648,6 +686,7 @@ main > .cards-wrapper .calendar-card .arrow-button img {
     margin-top: 20px;
 
 }
+*/
 
 
 
@@ -758,7 +797,7 @@ main .arrow-button {
     top: -100px;
 }
 
-artist-cards{
+artist-cards {
     position: absolute;
 }
 
@@ -771,13 +810,13 @@ artist-cards{
 }
 
 /************* Artists Sorting ****************/
-.getArtists{
+.getArtists {
     padding: 0 1em 0 2em;
-     display: inline-flex;
-      align-items:baseline;
+    display: inline-flex;
+    align-items: baseline;
 }
 
-.ArtistFirstLetter{
+.ArtistFirstLetter {
     background-color: #d1a343;
     text-align: center;
 }
@@ -793,7 +832,7 @@ artist-cards{
 }
 */
 
-.hide{
+.hide {
     display: none;
 }
 
@@ -819,41 +858,6 @@ artist-cards{
         grid-row-start: 1;
 
     }
-
-    .border {
-
-        margin-left: 0;
-
-        grid-column-start: 1;
-        grid-column-end: 8;
-        grid-row-start: 5;
-        grid-row-end: 8;
-    }
-
-    .borderP {
-        width: 70%;
-
-        margin-left: 20px;
-        margin-top: 50px;
-        font-size: 1.2rem;
-        grid-column-start: 1;
-        grid-column-end: 7;
-    }
-
-    .calendar-btn {
-
-
-        margin-right: 0;
-
-
-        grid-column-start: 10;
-
-    }
-
-    .search-box {
-
-        right: 120px;
-
     }
 
 
@@ -864,7 +868,7 @@ artist-cards{
 
 
     body {
-/*
+        /*
         grid-template-areas:
             "header header header header header header"
             ". main main main main ."
@@ -882,174 +886,32 @@ artist-cards{
     }
 
 
-    header {
-        background-image: url("img/coverphoto.jpg");
-        background-size: cover;
-    }
-
-    header .mainheader {
-
-
-        grid-template-columns: repeat(12, 1fr);
-        grid-template-rows: repeat(10, 8vh);
-
-
-    }
 
 
 
-    header > .mainheader h1 {
-        font-size: 3rem;
-        width: 100%;
-        margin-left: 0;
-        grid-column-start: 5;
-        /*    grid-column-end: 7;*/
-        grid-row-start: 1;
 
-    }
-
-    .border {
-        margin-top: 20px;
-        margin-left: 0;
-        height: 140px;
-        grid-column-start: 5;
-        grid-column-end: 10;
-        grid-row-start: 4;
-        grid-row-end: 8;
-        width: 100%;
-    }
-
-    .borderP {
-        width: 100%;
-
-        margin-left: 20px;
-        margin-top: 10px;
-        font-size: 1.2rem;
-        grid-column-start: 5;
-        grid-column-end: 10;
-    }
-
-   .calendar-btn{
-
-
-        margin-right: 0;
-
-
-        grid-column-start: 5;
-        grid-row-start: 8;
-
-    }
 
     .coverimg {
         display: none;
         filter: brightness(0.4);
 
     }
-        .mainartists .border-artistpage {
-    top: 200px;
-}
 
-.mainartists h1 {
-    top: 150px;
-}
+    .mainartists .border-artistpage {
+        top: 200px;
+    }
+
+    .mainartists h1 {
+        top: 150px;
+    }
 
 }
 
 @media screen and (max-width: 500px) {
 
-
-    body {
-        overflow-x: hidden;
-        grid-template-areas:
-            "header header header header header header"
-            ". main main main main ."
-            ". footer footer footer footer .";
-
-        margin: 0;
-        padding: 0;
-    }
-
-
-
-
-    header {
-        background-image: url("img/coverphoto.jpg");
-        background-size: cover;
-    }
-
-    header .mainheader {
-
-
-        grid-template-columns: repeat(12, 1fr);
-        grid-template-rows: repeat(10, 8vh);
-
-
-    }
-
-
-
-    header > .mainheader h1 {
-        font-size: 3rem;
-        width: 100%;
-        margin-left: 0;
-        grid-column-start: 3;
-        /*    grid-column-end: 7;*/
-        grid-row-start: 1;
-
-    }
-
-
-    .border {
-        margin-top: 20px;
-        margin-left: 0;
-        height: 170px;
-        grid-column-start: 3;
-        grid-column-end: 10;
-        grid-row-start: 4;
-        grid-row-end: 8;
-        width: 100%;
-    }
-
-    .borderP {
-        width: 100%;
-
-        margin-left: 20px;
-        /*    margin-top: -10px;*/
-        font-size: 1.2rem;
-        grid-column-start: 4;
-        grid-column-end: 10;
-        grid-row-start: 7;
-    }
-
-    .calendar-btn {
-
-
-        margin-right: 0;
-
-
-        grid-column-start: 5;
-        grid-row-start: 8;
-
-    }
-
-    .coverimg {
-        display: none;
-
-
-    }
-
-    header > .navigation-bar {
-        position: fixed;
-        bottom: 0;
-        right: 0;
-        z-index: 130;
-        width: 100%;
-        cursor: pointer;
-        display: flex;
-        background: white;
-        height: 60px;
-        justify-content: flex-end;
-        height:
+    .getArtists {
+            display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     }
 
     header > .navigation-bar .burger {
@@ -1075,10 +937,10 @@ artist-cards{
     }
 
     .mainartists .border-artistpage {
-    top: 125px;
-}
+        top: 125px;
+    }
 
-.mainartists h1 {
-    top: 90px;
-}
+    .mainartists h1 {
+        top: 90px;
+    }
 }
