@@ -976,6 +976,10 @@ artist-cards {
 
 @media screen and (max-width: 500px) {
 
+    .getArtists {
+            display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
 
     body {
         overflow-x: hidden;
