@@ -634,7 +634,7 @@ main > .cards-wrapper .calendar-card .arrow-button{
     header .logo {
 
 
-        width: 94vw;
+        width: 80vw;
         grid-column-start: 1;
         grid-column-end: 12;
 
@@ -650,6 +650,5 @@ main > .cards-wrapper .calendar-card .arrow-button{
 
     }
 
-    c
 
 }

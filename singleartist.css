@@ -1,5 +1,216 @@
+header {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 100px auto;
+
+}
+
+
+
+header > .navigation-bar {
+    grid-column: 12/-1;
+    width: 100%;
+    z-index: 120;
+    display: flex;
+    background: none;
+
+}
+
+header > .navigation-bar .burger {
+
+    width: 35px;
+    z-index: 130;
+    margin-top: 15px;
+    cursor: pointer;
+
+}
+
+header .logo {
+    background-image: url(LogoImage/KopenhagenArt_logo-01.svg);
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 220px;
+    margin: 0px;
+}
+
+header > .logo-wrapper {
+    margin-left: 7%;
+
+}
+
+/********Navigation ********/
+header nav a {
+    font-size: 2rem;
+    text-transform: uppercase;
+    display: block;
+    text-decoration: none;
+    color: black;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 3rem;
+    transition: color 0.2s 0.1s;
+    z-index: 100;
+
+}
+
+header nav a:hover {
+    color: gray;
+}
+
+header nav .active {
+    font-weight: bold;
+
+}
+
+
+/*
+.border {
+    width: 100%;
+    height: 100px;
+    border-left: 10px solid;
+    border-top: 10px solid;
+    border-bottom: 10px solid;
+    position: relative;
+    color: #D1A343;
+}
+*/
+
+
+header nav {
+    position: absolute;
+    right: -140vw;
+    z-index: 100;
+display: none;
+    background: white;
+    width: 100vw;
+    height: 100vh;
+    padding: 4rem;
+
+    transition: transform 1s;
+
+}
+
+header nav.open {
+        display: flex;
+
+    transform: translateX(-140vw);
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+    position: fixed;
+}
+
+/********** Burger *********/
+
+svg rect {
+    transition: all 0.2s;
+    transform-origin: 50% 50%;
+}
+
+.open rect:nth-child(2),
+.open rect:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+header rect:nth-child(2),
+rect:nth-child(3) {
+    transition-delay: 0s;
+}
+
+
+.open rect:first-child {
+    transform: translateY(30px);
+    opacity: 0;
+}
+
+.open rect:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+.open rect:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+.open rect:last-child {
+    transform: translateY(-30px);
+    opacity: 0;
+}
+
+
+
+
+/************ search bar ************/
+
+.search-box {
+    position: absolute;
+    top: 15px;
+    right: 110px;
+    padding: 5px;
+    /*    margin: 7px;*/
+    transform: translate(-50%, -50%) height: 25px;
+    border-radius: 25px;
+    background: darkgray;
+}
+
+.search-box:hover > .search-txt {
+    width: 140px;
+    padding: 6px 6px;
+}
+
+.search-box:hover > .search-btn {
+    background: black;
+}
+
+.search-btn {
+    color: white;
+    float: right;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.search-txt {
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: white;
+    font-size: 10px;
+    line-height: 20px;
+    width: 0px;
+    transition: 0.4s;
+
+}
+
+
+
+
+
 /******* single artist *******/
 /***** section1 *****/
+.single-artist{
+/*
+    display : grid;
+    justify-content: center;
+    align-content: center;
+*/
+      display: grid;
+    grid-template-columns: 1fr;
+/*    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));*/
+    /* Keep adding new columns - even if theres is no content for them. content does not always take up full width */
+    /*    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+    /* Don't add more columns than theres is content for. && +content "always" take full width */
+    padding: 10px;
+    grid-column-gap: 2rem;
+    grid-row-gap: 5rem;
+}
+
 .single-short-info {
     max-height: 500px;
 }
@@ -82,4 +293,163 @@
     position: absolute;
     bottom: -20px;
     right: 270px;
+}
+
+
+/******* breaking point ********/
+@media screen and (max-width: 800px) {
+
+
+    body {
+
+        margin: 0;
+        padding: 0;
+    }
+
+    .search-box {
+
+        right: 100px;
+
+    }
+/*
+    .single-short-info img {
+    position: static;
+
+}
+
+.border-single-artist {
+    width: 20%;
+    height: 150px;
+    border: 10px solid #D1A343;
+    border-right: none ;
+    position: relative;
+    left: 30%;
+}
+
+
+.single-short-info h1 {
+    position: relative;
+    font-size: 80px;
+    margin-left: 35%;
+    top: -170px;
+}
+
+.single-short-info h2 {
+    position: relative;
+    font-size: 50px;
+    margin-left: 35%;
+    top: -190px;
+}
+
+.single-short-info .date {
+    position: relative;
+    font-size: 25px;
+    margin-left: 35%;
+    top: -230px;
+}
+
+.single-short-info > p  {
+    position: relative;
+    margin-left: 35%;
+    top: -200px;
+}
+
+
+
+
+    .description-artist {
+    background-color: #E7F1F3;
+    width: 50%;
+    height: auto;
+
+   margin-left: 3%;
+    padding: 2%
+}
+.description-artist p{
+    font-size: 20px;
+}
+
+.description-artist img {
+    width: 100%;
+    height: auto;
+}
+
+.bottom-border-box {
+    border: 5px #d1a343 solid;
+    border-top: none;
+    position: relative;
+    height: 100px;
+    margin: 1%;
+    top: -70px;
+
+}
+
+.bottom-border-box h2 {
+    position: static;
+    bottom: -20px;
+    right: 270px;
+}
+*/
+
+
+
+
+}
+
+@media screen and (max-width: 500px) {
+
+
+    body {
+        overflow-x: hidden;
+        grid-template-areas:
+            "header header header header header header"
+            ". main main main main ."
+            ". footer footer footer footer .";
+
+        margin: 0;
+        padding: 0;
+    }
+
+    header > .navigation-bar {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        z-index: 120;
+        width: 100%;
+        cursor: pointer;
+        display: flex;
+        background: white;
+        height: 60px;
+        justify-content: flex-end;
+        height:
+    }
+
+    header > .navigation-bar .burger {
+        margin-right: 10px;
+    }
+
+    .search-box {
+        top: 15px;
+        right: 80px;
+    }
+
+    header .logo {
+
+
+        width: 80vw;
+        grid-column-start: 1;
+        grid-column-end: 12;
+
+
+  /*      height: 300px;
+        margin: 0px;
+*/
+    }
+
+    header > .logo-wrapper {
+        grid-column-start: 1;
+        grid-column-end: 12;
+
+    }
+
 }
