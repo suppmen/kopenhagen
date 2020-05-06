@@ -1,3 +1,194 @@
+header {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 100px auto;
+
+}
+
+
+
+header > .navigation-bar {
+    grid-column: 12/-1;
+    width: 100%;
+    z-index: 120;
+    display: flex;
+    background: none;
+
+}
+
+header > .navigation-bar .burger {
+
+    width: 35px;
+    z-index: 130;
+    margin-top: 15px;
+    cursor: pointer;
+
+}
+
+header .logo {
+    background-image: url(LogoImage/KopenhagenArt_logo-01.svg);
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 220px;
+    margin: 0px;
+}
+
+header > .logo-wrapper {
+    margin-left: 7%;
+
+}
+
+/********Navigation ********/
+header nav a {
+    font-size: 2rem;
+    text-transform: uppercase;
+    display: block;
+    text-decoration: none;
+    color: black;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 3rem;
+    transition: color 0.2s 0.1s;
+    z-index: 100;
+
+}
+
+header nav a:hover {
+    color: gray;
+}
+
+header nav .active {
+    font-weight: bold;
+
+}
+
+
+.border {
+    width: 100%;
+    height: 100px;
+    border-left: 10px solid;
+    border-top: 10px solid;
+    border-bottom: 10px solid;
+    position: relative;
+    color: #D1A343;
+}
+
+
+header nav {
+    position: absolute;
+    right: -140vw;
+    z-index: 100;
+display: none;
+    background: white;
+    width: 100vw;
+    height: 100vh;
+    padding: 4rem;
+
+    transition: transform 1s;
+
+}
+
+header nav.open {
+        display: flex;
+
+    transform: translateX(-140vw);
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+    position: fixed;
+}
+
+/********** Burger *********/
+
+svg rect {
+    transition: all 0.2s;
+    transform-origin: 50% 50%;
+}
+
+.open rect:nth-child(2),
+.open rect:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+header rect:nth-child(2),
+rect:nth-child(3) {
+    transition-delay: 0s;
+}
+
+
+.open rect:first-child {
+    transform: translateY(30px);
+    opacity: 0;
+}
+
+.open rect:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+.open rect:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+.open rect:last-child {
+    transform: translateY(-30px);
+    opacity: 0;
+}
+
+
+
+
+/************ search bar ************/
+
+.search-box {
+    position: absolute;
+    top: 15px;
+    right: 110px;
+    padding: 5px;
+    /*    margin: 7px;*/
+    transform: translate(-50%, -50%) height: 25px;
+    border-radius: 25px;
+    background: darkgray;
+}
+
+.search-box:hover > .search-txt {
+    width: 140px;
+    padding: 6px 6px;
+}
+
+.search-box:hover > .search-btn {
+    background: black;
+}
+
+.search-btn {
+    color: white;
+    float: right;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.search-txt {
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: white;
+    font-size: 10px;
+    line-height: 20px;
+    width: 0px;
+    transition: 0.4s;
+
+}
+
+
+
+
 /********** Galleries Page ************/
 /********** cover Image Galleries  ************/
 
