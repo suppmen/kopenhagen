@@ -250,22 +250,24 @@ header > .mainheader h1 {
 
 
 .calendar-btn  {
-    background-color: rgba(173, 229, 223, 0.7);
+    background-color: #D1A343;
     height: 70px;
-    border:0.3rem;
-    color: black;
-    padding:0px;
-    padding-left: 10px;
-    padding-right: 10px;
+    border-radius: 3rem;
+    color: white;
+    padding: 20px 20px;
     text-decoration: none;
     font-size: 30px;
-    border-style: solid;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 600;
-    vertical-align: middle;
+    border-style: none;
+
     margin: 5px 5px;
 
     cursor: pointer;
+
+
+    cursor: pointer;
+
+    margin-right: 100px;
+
 
 
 
