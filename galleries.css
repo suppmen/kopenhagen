@@ -238,3 +238,81 @@ rect:nth-child(3) {
    align-self: center;
    margin-top: 5%;
    margin-left: 5% }
+
+
+
+@media screen and (max-width: 500px) {
+
+
+    body {
+        overflow-x: hidden;
+        grid-template-areas:
+            "header header header header header header"
+            ". main main main main ."
+            ". footer footer footer footer .";
+
+        margin: 0;
+        padding: 0;
+    }
+
+
+
+
+
+
+
+
+/*
+    .border{background-color: rgba(225, 225, 225, 0.5);
+
+    margin-top:12%}
+
+
+    .coverimg {
+        display: none;
+
+
+    }
+*/
+
+
+    header > .navigation-bar {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        z-index: 120;
+        width: 100%;
+        cursor: pointer;
+        display: flex;
+        background: white;
+        height: 60px;
+        justify-content: flex-end;
+        height:
+    }
+
+    header > .navigation-bar .burger {
+        margin-right: 10px;
+    }
+
+    .search-box {
+        top: 15px;
+        right: 80px;
+    }
+
+    header .logo {
+
+
+        width: 80vw;
+        grid-column-start: 1;
+        grid-column-end: 12;
+
+    }
+
+    header > .logo-wrapper {
+        grid-column-start: 1;
+        grid-column-end: 12;
+
+    }
+
+
+}
