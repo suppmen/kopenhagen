@@ -8,3 +8,11 @@
 .so-me {float: left;}
 
 .so-me img {width: 20%;}
+
+
+@media screen and (max-width: 800px)
+{
+    .footer {display: grid;
+        grid-template-columns: 1fr;}
+
+}
