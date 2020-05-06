@@ -1,3 +1,181 @@
+header {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 100px auto;
+
+}
+
+
+
+header > .navigation-bar {
+    grid-column: 12/-1;
+    width: 100%;
+    z-index: 120;
+    display: flex;
+    background: none;
+
+}
+
+header > .navigation-bar .burger {
+
+    width: 35px;
+    z-index: 130;
+    margin-top: 15px;
+    cursor: pointer;
+
+}
+
+header .logo {
+    background-image: url(LogoImage/KopenhagenArt_logo-01.svg);
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 220px;
+    margin: 0px;
+}
+
+header > .logo-wrapper {
+    margin-left: 7%;
+
+}
+
+/********Navigation ********/
+header nav a {
+    font-size: 2rem;
+    text-transform: uppercase;
+    display: block;
+    text-decoration: none;
+    color: black;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 3rem;
+    transition: color 0.2s 0.1s;
+    z-index: 100;
+
+}
+
+header nav a:hover {
+    color: gray;
+}
+
+header nav .active {
+    font-weight: bold;
+
+}
+
+header nav {
+    position: absolute;
+    right: -140vw;
+    z-index: 100;
+display: none;
+    background: white;
+    width: 100vw;
+    height: 100vh;
+    padding: 4rem;
+
+    transition: transform 1s;
+
+}
+
+header nav.open {
+        display: flex;
+
+    transform: translateX(-140vw);
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+    position: fixed;
+}
+
+/********** Burger *********/
+
+svg rect {
+    transition: all 0.2s;
+    transform-origin: 50% 50%;
+}
+
+.open rect:nth-child(2),
+.open rect:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+header rect:nth-child(2),
+rect:nth-child(3) {
+    transition-delay: 0s;
+}
+
+
+.open rect:first-child {
+    transform: translateY(30px);
+    opacity: 0;
+}
+
+.open rect:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+.open rect:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+.open rect:last-child {
+    transform: translateY(-30px);
+    opacity: 0;
+}
+
+
+
+
+/************ search bar ************/
+
+.search-box {
+    position: absolute;
+    top: 15px;
+    right: 110px;
+    padding: 5px;
+    /*    margin: 7px;*/
+    transform: translate(-50%, -50%) height: 25px;
+    border-radius: 25px;
+    background: darkgray;
+}
+
+.search-box:hover > .search-txt {
+    width: 140px;
+    padding: 6px 6px;
+}
+
+.search-box:hover > .search-btn {
+    background: black;
+}
+
+.search-btn {
+    color: white;
+    float: right;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.search-txt {
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: white;
+    font-size: 10px;
+    line-height: 20px;
+    width: 0px;
+    transition: 0.4s;
+
+}
+
+
+
 /******* single artist *******/
 /***** section1 *****/
 .single-short-info {
@@ -346,4 +524,199 @@
         top: 250px;
 
     }
+
+    header > .navigation-bar {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        z-index: 120;
+        width: 100%;
+        cursor: pointer;
+        display: flex;
+        background: white;
+        height: 60px;
+        justify-content: flex-end;
+        height:
+    }
+
+    header > .navigation-bar .burger {
+        margin-right: 10px;
+    }
+
+    .search-box {
+        top: 15px;
+        right: 80px;
+    }
+
+    header .logo {
+
+
+        width: 85vw;
+        grid-column-start: 1;
+        grid-column-end: 12;
+    }
+
+    header > .logo-wrapper {
+        grid-column-start: 1;
+        grid-column-end: 12;
+
+    }
 }
+
+/*
+@media screen and (max-width: 1000px) {
+
+    header .mainheader {
+
+
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(10, 8vh);
+
+
+    }
+
+
+
+    header > .mainheader h1 {
+        font-size: 3.2rem;
+        width: 60%;
+        margin-left: 0;
+        grid-column-start: 1;
+        grid-column-end: 7;
+        grid-row-start: 1;
+
+    }
+
+    .border {
+
+        margin-left: 0;
+
+        grid-column-start: 1;
+        grid-column-end: 8;
+        grid-row-start: 5;
+        grid-row-end: 8;
+    }
+
+    .borderP {
+        width: 70%;
+
+        margin-left: 20px;
+        margin-top: 50px;
+        font-size: 1.2rem;
+        grid-column-start: 1;
+        grid-column-end: 7;
+    }
+
+    button {
+
+
+        margin-right: 0;
+
+
+        grid-column-start: 10;
+
+    }
+
+    .search-box {
+
+        right: 120px;
+
+    }
+
+
+}
+
+
+@media screen and (max-width: 800px) {
+
+
+    body {
+
+        margin: 0;
+        padding: 0;
+    }
+
+    .search-box {
+
+        right: 100px;
+
+    }
+
+
+    header {
+        background-image: url("img/coverphoto.jpg");
+        background-size: cover;
+    }
+
+    header .mainheader {
+
+
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(10, 8vh);
+
+
+    }
+
+
+
+    header > .mainheader h1 {
+        font-size: 3rem;
+        width: 100%;
+        margin-left: 0;
+        grid-column-start: 5;
+        grid-row-start: 1;
+
+    }
+
+    .border {
+        margin-top: 15%;
+        margin-left: 0;
+        height: 140px;
+        grid-column-start: 5;
+        grid-column-end: 11;
+        grid-row-start: 4;
+        grid-row-end: 8;
+        width: 100%;
+    }
+
+    .borderP {
+        width: 100%;
+
+        margin-left:5%;
+        margin-top: 5%;
+        font-size: 1.4rem;
+        grid-column-start: 5;
+        grid-column-end: 10;
+    }
+
+    .calendar-btn{
+
+     grid-row-start: 9;
+    }
+
+    .coverimg {
+        display: none;
+        filter: brightness(0.4);
+
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+
+
+    body {
+        overflow-x: hidden;
+        grid-template-areas:
+            "header header header header header header"
+            ". main main main main ."
+            ". footer footer footer footer .";
+
+        margin: 0;
+        padding: 0;
+    }
+
+
+
+}
+*/
