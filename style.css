@@ -573,25 +573,7 @@ header .filter .place {
     color: var(--teal-900);
 }
 
-/*
-.coverimg {
-    height: auto;
-    width: 100%;
-    grid-column-start: 5;
-    grid-column-end: -2;
-    grid-row-start: 1;
 
-
-
-
-}
-
-.coverimg img {
-    max-width: 100%;
-    height: auto;
-}
-
-*/
 
 /*calendar submit*/
 
@@ -623,70 +605,6 @@ header .arrow-button a {
 }
 
 
-/******* main ********/
-
-/*
-main {
-    display: flex;
-    flex-direction: column;
-}
-
-main .events-list-title {
-    display: flex;
-    width: 40%;
-    margin-left: 100px;
-    margin-bottom: 50px;
-    align-items: baseline;
-    justify-content: space-between;
-    color: #878081;
-    flex-wrap: wrap;
-    border-bottom: 1px solid;
-
-}
-
-
-main > .cards-wrapper {
-
-
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-
-    grid-gap: 4rem;
-    padding: 100px;
-    padding-top: 0;
-    position: relative;
-    z-index: 10;
-}
-*/
-
-/*
-main > .cards-wrapper .calendar-card {
-    background: #e7f1f3;
-        height: 300px;
-    padding: 10px;
-}
-
-main > .cards-wrapper .calendar-card .card-details {
-    padding: 5px;
-}
-
-main > .cards-wrapper .calendar-card .card-details p {
-    font-size: 0.8rem;
-    text-transform: capitalize;
-}
-
-main > .cards-wrapper .calendar-card .card-header img {
-    max-width: 100%;
-    height: auto;
-}
-
-main > .cards-wrapper .calendar-card .arrow-button img {
-    max-width: 60%;
-    height: auto;
-    margin-top: 20px;
-
-}
-*/
 
 
 
@@ -821,16 +739,7 @@ artist-cards {
     text-align: center;
 }
 
-/*
-.ArtistNamesSorting{
-    padding: 0 1em 0 2em;
-     display: inline-flex;
-      align-items:baseline;
-}
-.sorting{
-    padding: 0 1em 0 2em;
-}
-*/
+
 
 .hide {
     display: none;
@@ -868,12 +777,7 @@ artist-cards {
 
 
     body {
-        /*
-        grid-template-areas:
-            "header header header header header header"
-            ". main main main main ."
-            ". footer footer footer footer .";
-*/
+
 
         margin: 0;
         padding: 0;
@@ -885,10 +789,14 @@ artist-cards {
 
     }
 
+.day-of-week,
+.date-grid {
+    display: block;
+}
 
-
-
-
+   .arrow-button img {
+        position: inherit;
+    }
 
 
     .coverimg {
@@ -909,6 +817,12 @@ artist-cards {
 
 @media screen and (max-width: 500px) {
 
+.date-grid {
+    display: block;
+}
+     .arrow-button img{
+        position: inherit;
+    }
     .getArtists {
             display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
